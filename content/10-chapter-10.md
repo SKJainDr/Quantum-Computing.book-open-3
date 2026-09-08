@@ -1,19 +1,17 @@
-# CHAPTER 10
+# UNIT 5 | CHAPTER 10
 
 # Quantum Industry and Career Landscape
 
-<div class="box box-learning-objectives">
-<p class="box-title"><strong>📋 Learning Objectives</strong></p>
+<div class="box box-key-concept">
+<p class="box-title"><strong>📋  Learning Objectives</strong></p>
 <p>After completing this chapter you will be able to: (1) Describe the global quantum technology market by segment and project its growth to 2035; (2) Map the quantum industry ecosystem from hardware through cloud, software, applications, and consulting; (3) Explain the quantum threat to classical cryptography (Shor's algorithm) and describe the NIST PQC standards (CRYSTALS-Kyber, Dilithium, SPHINCS+); (4) Describe India's National Quantum Mission structure, four hubs, budget, and 2031 milestones; (5) Compare four major quantum career pathways with required skills and education; (6) Construct a personalised quantum skill development plan using the skill matrix; (7) Prepare for the IBM Qiskit Developer Certification exam; (8) Design and execute a quantum GitHub portfolio strategy.</p>
 </div>
 
 ## 10.1 The Global Quantum Market: Size, Segments and Growth Projections
 
-<div class="figure-block">
-<figure class="book-figure">
-<img src="content/images/image65.png" alt="">
-<figcaption></figcaption>
-</figure>
+<div class="box box-generic">
+
+<img class="fig-img" src="content/images/image73.png" alt="">
 </div>
 
 **Figure 10.1: Global Quantum Technology Market 2024-2035 and Government Investment by Country**
@@ -26,80 +24,37 @@ The global quantum technology market is at an inflection point. McKinsey & Compa
 
 The market has four distinct segments with different growth drivers and timelines:
 
-1. Quantum Hardware: Physical quantum systems (superconducting processors, trapped-ion systems, photonic chips, neutral atom processors) and supporting infrastructure (dilution refrigerators, microwave electronics, laser systems). Currently the largest segment by revenue, dominated by IBM, IonQ, Quantinuum, QuEra, D-Wave, and Rigetti. Growth driven by qubit count and fidelity improvements.
-2. Quantum Software and Cloud Platforms: IBM Quantum Network, Amazon Braket, Microsoft Azure Quantum, Google Quantum AI Cloud, and IonQ Cloud. Also includes SDK revenues (Qiskit, PennyLane, Cirq), quantum simulation software (Qiskit Aer, QuTiP), and quantum algorithm libraries. Growth driven by cloud quantum access democratisation.
-3. Quantum Services and Consulting: Use-case development, quantum feasibility studies, proofs-of-concept, training programmes, and system integration. Major consultancies (McKinsey, Accenture, IBM Consulting, PwC Quantum Hub) have established quantum practices. Growing fastest in percentage terms as enterprises begin quantum exploration.
-4. Post-Quantum Cryptography (PQC): The largest and most urgent segment due to regulatory mandates. US federal agencies are mandated by NIST to migrate to PQC by 2030. Financial regulators in the UK, EU, and India are issuing PQC migration guidelines. Hardware Security Module (HSM) upgrades, VPN software updates, TLS library patches, and PKI infrastructure replacement are all driving large PQC procurement.
+- Quantum Hardware: Physical quantum systems (superconducting processors, trapped-ion systems, photonic chips, neutral atom processors) and supporting infrastructure (dilution refrigerators, microwave electronics, laser systems). Currently the largest segment by revenue, dominated by IBM, IonQ, Quantinuum, QuEra, D-Wave, and Rigetti. Growth driven by qubit count and fidelity improvements.
+
+- Quantum Software and Cloud Platforms: IBM Quantum Network, Amazon Braket, Microsoft Azure Quantum, Google Quantum AI Cloud, and IonQ Cloud. Also includes SDK revenues (Qiskit, PennyLane, Cirq), quantum simulation software (Qiskit Aer, QuTiP), and quantum algorithm libraries. Growth driven by cloud quantum access democratisation.
+
+- Quantum Services and Consulting: Use-case development, quantum feasibility studies, proofs-of-concept, training programmes, and system integration. Major consultancies (McKinsey, Accenture, IBM Consulting, PwC Quantum Hub) have established quantum practices. Growing fastest in percentage terms as enterprises begin quantum exploration.
+
+- Post-Quantum Cryptography (PQC): The largest and most urgent segment due to regulatory mandates. US federal agencies are mandated by NIST to migrate to PQC by 2030. Financial regulators in the UK, EU, and India are issuing PQC migration guidelines. Hardware Security Module (HSM) upgrades, VPN software updates, TLS library patches, and PKI infrastructure replacement are all driving large PQC procurement.
 
 <div class="box box-real-world">
-<p class="box-title"><strong>🌐 McKinsey Global Quantum Value Study (2021)</strong></p>
-<p>McKinsey estimated four industries will capture the bulk of quantum value creation: pharmaceuticals & chemicals ($100-170B), finance ($60-170B), automotive, aerospace & defence ($50-110B), and electronics & IT ($40-80B). Of these, pharmaceuticals and chemistry are expected to be the earliest and largest beneficiaries, primarily through quantum chemistry simulation (VQE, QPE -- covered in Chapter 6). The 2023 McKinsey update revised total opportunity upward to $450-850B by 2040, reflecting faster-than-expected hardware progress.</p>
+<p class="box-title"><strong>🌐  McKinsey Global Quantum Value Study (2021)</strong></p>
+<p>McKinsey estimated four industries will capture the bulk of quantum value creation: pharmaceuticals &amp; chemicals ($100-170B), finance ($60-170B), automotive, aerospace &amp; defence ($50-110B), and electronics &amp; IT ($40-80B). Of these, pharmaceuticals and chemistry are expected to be the earliest and largest beneficiaries, primarily through quantum chemistry simulation (VQE, QPE -- covered in Chapter 6). The 2023 McKinsey update revised total opportunity upward to $450-850B by 2040, reflecting faster-than-expected hardware progress.</p>
 </div>
 
 ### 10.1.2 Leading Hardware Companies (2024)
 
-<table>
-<thead><tr>
-<th><strong>Company</strong></th>
-<th><strong>Technology</strong></th>
-<th><strong>Qubit Count</strong></th>
-<th><strong>Best 2Q Fidelity</strong></th>
-<th><strong>Key Differentiator</strong></th>
-</tr></thead>
-<tbody>
-<tr>
-<td>IBM Quantum</td>
-<td>Superconducting (transmon)</td>
-<td>1121 (Condor)</td>
-<td>99.9% (Heron)</td>
-<td>Largest qubit count; heavy-hexagonal topology; cloud access</td>
-</tr>
-<tr>
-<td>Google Quantum AI</td>
-<td>Superconducting (transmon)</td>
-<td>70 (Sycamore)</td>
-<td>99.7%</td>
-<td>Tunable couplers; quantum supremacy claim 2019; Willow 2024</td>
-</tr>
-<tr>
-<td>IonQ</td>
-<td><strong>Trapped ion (Yb+)</strong></td>
-<td><strong>35 (Forte)</strong></td>
-<td><strong>99.9%</strong></td>
-<td>All-to-all connectivity; QV > 4,000,000; Nasdaq listed (IONQ)</td>
-</tr>
-<tr>
-<td>Quantinuum</td>
-<td><strong>Trapped ion (QCCD)</strong></td>
-<td><strong>56 (H2)</strong></td>
-<td><strong>99.9%</strong></td>
-<td>Highest gate fidelity commercially; QCCD ion shuttling; QV 8192+</td>
-</tr>
-<tr>
-<td>QuEra Computing</td>
-<td>Neutral atom (Rb tweezers)</td>
-<td>256 (Aquila)</td>
-<td>99.5%</td>
-<td>Reconfigurable arrays; 48 logical qubits below break-even (2023)</td>
-</tr>
-<tr>
-<td>D-Wave Systems</td>
-<td>Quantum annealing (flux qubits)</td>
-<td>5000+ (Adv. 2)</td>
-<td>N/A (analog)</td>
-<td>Commercial annealing; Advantage for optimisation; Nasdaq listed</td>
-</tr>
-</tbody></table>
+| Company | Technology | Qubit Count | Best 2Q Fidelity | Key Differentiator |
+|---|---|---|---|---|
+| IBM Quantum | Superconducting (transmon) | 1121 (Condor) | 99.9% (Heron) | Largest qubit count; heavy-hexagonal topology; cloud access |
+| Google Quantum AI | Superconducting (transmon) | 70 (Sycamore) | 99.7% | Tunable couplers; quantum supremacy claim 2019; Willow 2024 |
+| IonQ | Trapped ion (Yb+) | 35 (Forte) | 99.9% | All-to-all connectivity; QV > 4,000,000; Nasdaq listed (IONQ) |
+| Quantinuum | Trapped ion (QCCD) | 56 (H2) | 99.9% | Highest gate fidelity commercially; QCCD ion shuttling; QV 8192+ |
+| QuEra Computing | Neutral atom (Rb tweezers) | 256 (Aquila) | 99.5% | Reconfigurable arrays; 48 logical qubits below break-even (2023) |
+| D-Wave Systems | Quantum annealing (flux qubits) | 5000+ (Adv. 2) | N/A (analog) | Commercial annealing; Advantage for optimisation; Nasdaq listed |
 
 Table 10.1: Leading quantum hardware companies (2024). Highlighted rows show trapped-ion leaders with highest gate fidelity.
 
 ## 10.2 The Quantum Industry Ecosystem
 
-<div class="figure-block">
-<figure class="book-figure">
-<img src="content/images/image66.png" alt="">
-<figcaption></figcaption>
-</figure>
+<div class="box box-generic">
+
+<img class="fig-img" src="content/images/image74.png" alt="">
 </div>
 
 **Figure 10.2: Global Quantum Industry Ecosystem -- Companies Across All Layers**
@@ -110,14 +65,18 @@ Four-layer ecosystem map of the global quantum technology industry. Hardware Lay
 
 Cloud quantum computing has democratised access to real quantum hardware. Any researcher, student, or company can now run quantum circuits on real processors without owning hardware. The major platforms are:
 
-1. IBM Quantum Platform (quantum.ibm.com): Free tier provides access to up to 127-qubit processors with 10 minutes of compute per month. IBM Quantum Premium provides dedicated access to Heron and larger processors. The platform uses Qiskit Runtime with Sampler and Estimator primitives. IBM has over 400 quantum network partners globally.
-2. Amazon Braket (AWS): Multi-hardware platform supporting IonQ, Rigetti, Oxford Quantum Circuits, and QuEra processors. Uses Python Braket SDK. Useful for comparing results across hardware platforms. Pay-per-task pricing.
-3. Microsoft Azure Quantum: Provides access to IonQ, Quantinuum, and Rigetti hardware. Also provides quantum-inspired optimisation solvers. Uses Q# language and Azure Quantum Development Kit.
-4. Google Quantum AI: Research-focused access (not generally public) via Google Cloud. The Cirq SDK is open-source. Google recently announced the Willow chip (2024) with below-threshold error correction.
-5. IonQ Cloud (via AWS, Azure, Google): Direct access to IonQ Aria and Forte processors from multiple cloud marketplaces. IonQ has the highest published Quantum Volume among commercial systems.
+- IBM Quantum Platform (quantum.ibm.com): Free tier provides access to up to 127-qubit processors with 10 minutes of compute per month. IBM Quantum Premium provides dedicated access to Heron and larger processors. The platform uses Qiskit Runtime with Sampler and Estimator primitives. IBM has over 400 quantum network partners globally.
+
+- Amazon Braket (AWS): Multi-hardware platform supporting IonQ, Rigetti, Oxford Quantum Circuits, and QuEra processors. Uses Python Braket SDK. Useful for comparing results across hardware platforms. Pay-per-task pricing.
+
+- Microsoft Azure Quantum: Provides access to IonQ, Quantinuum, and Rigetti hardware. Also provides quantum-inspired optimisation solvers. Uses Q# language and Azure Quantum Development Kit.
+
+- Google Quantum AI: Research-focused access (not generally public) via Google Cloud. The Cirq SDK is open-source. Google recently announced the Willow chip (2024) with below-threshold error correction.
+
+- IonQ Cloud (via AWS, Azure, Google): Direct access to IonQ Aria and Forte processors from multiple cloud marketplaces. IonQ has the highest published Quantum Volume among commercial systems.
 
 <div class="box box-real-world">
-<p class="box-title"><strong>🌐 IBM Quantum Network -- The World's Largest Quantum Community</strong></p>
+<p class="box-title"><strong>🌐  IBM Quantum Network -- The World's Largest Quantum Community</strong></p>
 <p>The IBM Quantum Network comprises over 400 organisations including universities, research laboratories, startups, and Fortune 500 companies. Members include universities (MIT, Stanford, IIT, Tokyo), national laboratories (Argonne, Oak Ridge, Fraunhofer), and industry partners (JPMorgan, Boeing, Samsung, Mitsubishi, ExxonMobil, Daimler). Network members receive dedicated quantum compute time, early access to new processors, collaboration opportunities, and technical support from IBM Quantum researchers. India has multiple IBM Quantum Network member institutions, including IIT Bombay, IIT Madras, and TIFR.</p>
 </div>
 
@@ -125,23 +84,24 @@ Cloud quantum computing has democratised access to real quantum hardware. Any re
 
 A growing ecosystem of companies applies quantum computing to specific industry problems:
 
-1. Finance: QC Ware (quantum-enhanced machine learning and portfolio optimisation, Goldman Sachs partnership), Multiverse Computing (Singularity platform for finance, insurance, and energy optimisation -- BBVA, Credit Agricole, Total Energies), Quantinuum (InQuanto chemistry platform, HSBC partnership).
-2. Chemistry and Drug Discovery: ProteinQure (protein design using quantum ML), Menten AI (quantum-assisted enzyme engineering), Qubit Pharmaceuticals (quantum simulation for drug-receptor binding, Quantinuum partnership), Algorithmiq (quantum advantage for quantum chemistry with tensor network hybrid methods).
-3. Logistics and Optimisation: Volkswagen (traffic flow optimisation using D-Wave annealing), Airbus (aircraft loading optimisation with QAOA), DHL (quantum-optimised logistics routing), BMW (quantum-assisted autonomous driving route planning).
-4. Quantum Security: Post-Quantum (PQC products for VPNs and HSMs), SandboxAQ (quantum-safe cryptography and quantum sensing, Google spin-out 2022), ISARA Corporation (quantum-safe certificate authority products).
+- Finance: QC Ware (quantum-enhanced machine learning and portfolio optimisation, Goldman Sachs partnership), Multiverse Computing (Singularity platform for finance, insurance, and energy optimisation -- BBVA, Credit Agricole, Total Energies), Quantinuum (InQuanto chemistry platform, HSBC partnership).
+
+- Chemistry and Drug Discovery: ProteinQure (protein design using quantum ML), Menten AI (quantum-assisted enzyme engineering), Qubit Pharmaceuticals (quantum simulation for drug-receptor binding, Quantinuum partnership), Algorithmiq (quantum advantage for quantum chemistry with tensor network hybrid methods).
+
+- Logistics and Optimisation: Volkswagen (traffic flow optimisation using D-Wave annealing), Airbus (aircraft loading optimisation with QAOA), DHL (quantum-optimised logistics routing), BMW (quantum-assisted autonomous driving route planning).
+
+- Quantum Security: Post-Quantum (PQC products for VPNs and HSMs), SandboxAQ (quantum-safe cryptography and quantum sensing, Google spin-out 2022), ISARA Corporation (quantum-safe certificate authority products).
 
 <div class="box box-anecdote">
-<p class="box-title"><strong>📜 2023-2024 Industry Milestones</strong></p>
-<p>Key commercial milestones: (1) IBM Quantum (2023): 1121-qubit Condor, 133-qubit Heron with 99.9% 2Q fidelity, and the first "quantum utility" result in Nature. (2) Quantinuum (2023): H2 processor achieves record QV > 1,000,000; first demonstration of non-Abelian anyons for topological qubits (Microsoft collaboration). (3) QuEra (2023): 48 logical qubits below break-even error threshold -- first useful-scale error correction. (4) Google (2024): Willow chip demonstrates below-threshold error correction (errors reduce as code distance increases for the first time). (5) IonQ (2024): Forte processor, 35 algorithmic qubits, QV > 4,000,000.</p>
+<p class="box-title"><strong>📜  2023-2024 Industry Milestones</strong></p>
+<p>Key commercial milestones: (1) IBM Quantum (2023): 1121-qubit Condor, 133-qubit Heron with 99.9% 2Q fidelity, and the first "quantum utility" result in Nature. (2) Quantinuum (2023): H2 processor achieves record QV &gt; 1,000,000; first demonstration of non-Abelian anyons for topological qubits (Microsoft collaboration). (3) QuEra (2023): 48 logical qubits below break-even error threshold -- first useful-scale error correction. (4) Google (2024): Willow chip demonstrates below-threshold error correction (errors reduce as code distance increases for the first time). (5) IonQ (2024): Forte processor, 35 algorithmic qubits, QV &gt; 4,000,000.</p>
 </div>
 
 ## 10.3 Post-Quantum Cryptography: Securing the Quantum Future
 
-<div class="figure-block">
-<figure class="book-figure">
-<img src="content/images/image67.png" alt="">
-<figcaption></figcaption>
-</figure>
+<div class="box box-generic">
+
+<img class="fig-img" src="content/images/image75.png" alt="">
 </div>
 
 **Figure 10.3: Post-Quantum Cryptography Timeline and NIST PQC Standards (FIPS 2024)**
@@ -150,17 +110,14 @@ Left: Cryptographic timeline from 1977 to 2035. RSA published (1977): the domina
 
 ### 10.3.1 The Quantum Threat to Classical Cryptography
 
-Most modern Internet security depends on two mathematical problems believed to be hard for classical computers: (1) Integer Factorisation: RSA encryption relies on the difficulty of factoring large integers N = p*q into primes p and q. RSA-2048 would take 10^18 years for the best classical algorithm. (2) Discrete Logarithm: Elliptic Curve Cryptography (ECC) and Diffie-Hellman key exchange rely on the discrete logarithm problem in finite groups. ECC-256 would take 10^15 years classically.
+Most modern Internet security depends on two mathematical problems believed to be hard for classical computers: (1) Integer Factorisation: RSA encryption relies on the difficulty of factoring large integers N = p\*q into primes p and q. RSA-2048 would take 10^18 years for the best classical algorithm. (2) Discrete Logarithm: Elliptic Curve Cryptography (ECC) and Diffie-Hellman key exchange rely on the discrete logarithm problem in finite groups. ECC-256 would take 10^15 years classically.
 
 In 1994, Peter Shor published his quantum algorithm for integer factorisation. Shor's algorithm runs in polynomial time O(n^3 log n) on a quantum computer -- an exponential speedup over the best classical algorithm O(exp(n^{1/3})). The same algorithm (with minor modification) solves the discrete logarithm problem. A fault-tolerant quantum computer with approximately 4000 logical qubits and 10^10 quantum operations could break RSA-2048 in a matter of hours.
 
-<table>
-<thead><tr>
-<th>T_classical(RSA - 2048) ∼ e^n2mu{ 1/3} ∼ 10^18 years vs T_quantum(RSA - 2048) ∼ n^3 = O(10^10) operations</th>
-<th>Quantum vs classical RSA factoring complexity</th>
-</tr></thead>
-<tbody>
-</tbody></table>
+<div class="box box-generic">
+<p class="box-title">Quantum vs classical RSA factoring complexity</p>
+
+</div>
 
 ### 10.3.2 Harvest-Now-Decrypt-Later Attacks
 
@@ -168,14 +125,18 @@ The "Q-Day" threat — the day a fault-tolerant quantum computer breaks RSA — 
 
 Data at risk from HNDL:
 
-1. Medical records (typically held for 30+ years): personal health information, genomic data, mental health records.
-2. Government and military secrets with long-term strategic relevance.
-3. Intellectual property: drug compound patents, semiconductor designs, source code with 10-20 year competitive value.
-4. Financial transaction logs and long-term account identifiers.
-5. Personal identity credentials (biometrics, national ID data) that cannot be changed.
+- Medical records (typically held for 30+ years): personal health information, genomic data, mental health records.
+
+- Government and military secrets with long-term strategic relevance.
+
+- Intellectual property: drug compound patents, semiconductor designs, source code with 10-20 year competitive value.
+
+- Financial transaction logs and long-term account identifiers.
+
+- Personal identity credentials (biometrics, national ID data) that cannot be changed.
 
 <div class="box box-warning">
-<p class="box-title"><strong>⚠️ Urgency: Migrate to PQC Now</strong></p>
+<p class="box-title"><strong>⚠️  Urgency: Migrate to PQC Now</strong></p>
 <p>The US National Security Agency (NSA) issued a Cybersecurity Advisory in 2022 requiring all National Security Systems to plan PQC migration. US OMB (Office of Management and Budget) Memorandum M-23-02 (2022) mandated all US federal agencies to inventory cryptographic assets and begin migration to quantum-resistant algorithms. The EU's ENISA recommends starting PQC migration planning immediately for long-lived secrets. In India, CERT-In and the NQM QuCryptoS hub are coordinating the national PQC assessment programme. The migration will take 5-10 years -- starting now is essential.</p>
 </div>
 
@@ -183,44 +144,12 @@ Data at risk from HNDL:
 
 After a 7-year global competition (2016-2024), NIST published three final PQC standards in August 2024:
 
-<table>
-<thead><tr>
-<th><strong>Standard</strong></th>
-<th><strong>FIPS</strong></th>
-<th><strong>Type</strong></th>
-<th><strong>Mathematical Basis</strong></th>
-<th><strong>Key Use Case</strong></th>
-</tr></thead>
-<tbody>
-<tr>
-<td>CRYSTALS-Kyber</td>
-<td><strong>FIPS 203</strong></td>
-<td>KEM (Key Encapsulation)</td>
-<td>Module-LWE lattice</td>
-<td>TLS 1.3, HTTPS, VPN, SSH</td>
-</tr>
-<tr>
-<td>CRYSTALS-Dilithium</td>
-<td><strong>FIPS 204</strong></td>
-<td>Digital Signature</td>
-<td>Module-LWE lattice</td>
-<td>Code signing, auth., email</td>
-</tr>
-<tr>
-<td>SPHINCS+</td>
-<td>FIPS 205</td>
-<td>Hash-based Signature</td>
-<td>SHA-3 hash functions</td>
-<td>Long-term archival signing</td>
-</tr>
-<tr>
-<td>FALCON</td>
-<td>Future FIPS</td>
-<td>Compact Lattice Signature</td>
-<td>NTRU lattice problem</td>
-<td>IoT, constrained devices</td>
-</tr>
-</tbody></table>
+| Standard | FIPS | Type | Mathematical Basis | Key Use Case |
+|---|---|---|---|---|
+| CRYSTALS-Kyber | FIPS 203 | KEM (Key Encapsulation) | Module-LWE lattice | TLS 1.3, HTTPS, VPN, SSH |
+| CRYSTALS-Dilithium | FIPS 204 | Digital Signature | Module-LWE lattice | Code signing, auth., email |
+| SPHINCS+ | FIPS 205 | Hash-based Signature | SHA-3 hash functions | Long-term archival signing |
+| FALCON | Future FIPS | Compact Lattice Signature | NTRU lattice problem | IoT, constrained devices |
 
 Table 10.2: NIST Post-Quantum Cryptography Standards (FIPS 2024). Highlighted rows are primary deployment targets.
 
@@ -232,11 +161,9 @@ SPHINCS+: The Conservative Choice: SPHINCS+ is based solely on the security of h
 
 ## 10.4 India's National Quantum Mission (NQM)
 
-<div class="figure-block">
-<figure class="book-figure">
-<img src="content/images/image68.png" alt="">
-<figcaption></figcaption>
-</figure>
+<div class="box box-generic">
+
+<img class="fig-img" src="content/images/image76.png" alt="">
 </div>
 
 **Figure 10.4: India's National Quantum Mission -- Structure, Technology Hubs and Timeline**
@@ -249,51 +176,22 @@ India's National Quantum Mission was approved by the Union Cabinet on April 19, 
 
 The NQM has four primary objectives:
 
-1. Quantum Computing: Develop indigenous quantum computers with 50-1000 qubit processors, satellite-based quantum computing capabilities, and supporting quantum software ecosystem.
-2. Quantum Communication: Deploy a 2000 km terrestrial QKD network, launch an indigenous quantum satellite (Q-Sat) for satellite-based QKD, and establish QRNG certification for banking and government.
-3. Quantum Sensing and Metrology: Develop quantum-enhanced gravimeters, magnetometers, atomic clocks, and quantum-enhanced imaging systems with defence and civilian applications.
-4. Quantum Materials: Develop indigenous superconducting qubit fabrication, topological qubit research, quantum-grade materials synthesis, and cryogenic infrastructure.
+- Quantum Computing: Develop indigenous quantum computers with 50-1000 qubit processors, satellite-based quantum computing capabilities, and supporting quantum software ecosystem.
+
+- Quantum Communication: Deploy a 2000 km terrestrial QKD network, launch an indigenous quantum satellite (Q-Sat) for satellite-based QKD, and establish QRNG certification for banking and government.
+
+- Quantum Sensing and Metrology: Develop quantum-enhanced gravimeters, magnetometers, atomic clocks, and quantum-enhanced imaging systems with defence and civilian applications.
+
+- Quantum Materials: Develop indigenous superconducting qubit fabrication, topological qubit research, quantum-grade materials synthesis, and cryogenic infrastructure.
 
 ### 10.4.2 The Four Technology Innovation Hubs
 
-<table>
-<thead><tr>
-<th><strong>Hub</strong></th>
-<th><strong>Budget (Cr)</strong></th>
-<th><strong>Lead Institutions</strong></th>
-<th><strong>Key Research Focus</strong></th>
-<th><strong>2031 Target</strong></th>
-</tr></thead>
-<tbody>
-<tr>
-<td>QuST (Quantum Computing & Simulation)</td>
-<td>Rs.1800</td>
-<td>IIT Bombay, IISc Bangalore, TIFR Mumbai</td>
-<td>Superconducting & trapped-ion qubits, error correction, VQE/QAOA algorithms, quantum software</td>
-<td>50-qubit indigenous QC prototype; 1000-qubit roadmap; Qiskit integration</td>
-</tr>
-<tr>
-<td>QuCryptoS (Quantum Communications)</td>
-<td>Rs.1440</td>
-<td>IIT Delhi, C-DOT, DRDO, CDAC</td>
-<td>QKD systems, QRNG devices, post-quantum cryptography, quantum satellite communications</td>
-<td>2000 km QKD fibre; Q-Sat launch; PQC standards for India</td>
-</tr>
-<tr>
-<td>QuNAT (Quantum Sensing)</td>
-<td>Rs.1440</td>
-<td>IIT Madras, NPL India, IIT Roorkee</td>
-<td>Quantum gravimeters, magnetometers, atomic clocks, quantum-enhanced lidar, navigation</td>
-<td>Field-deployable quantum gravimeter; atomic clock accuracy 10^{-18}</td>
-</tr>
-<tr>
-<td>QuMAT (Quantum Materials)</td>
-<td>Rs.960</td>
-<td>JNCASR, IISc, IIT Bombay, IIT Kanpur</td>
-<td>Superconducting thin films, topological materials, 2D materials, cryogenic packaging, qubit fabrication</td>
-<td>Indigenous SC qubit fabrication; topological qubit prototypes; qubit foundry capability</td>
-</tr>
-</tbody></table>
+| Hub | Budget (Cr) | Lead Institutions | Key Research Focus | 2031 Target |
+|---|---|---|---|---|
+| QuST (Quantum Computing & Simulation) | Rs.1800 | IIT Bombay, IISc Bangalore, TIFR Mumbai | Superconducting & trapped-ion qubits, error correction, VQE/QAOA algorithms, quantum software | 50-qubit indigenous QC prototype; 1000-qubit roadmap; Qiskit integration |
+| QuCryptoS (Quantum Communications) | Rs.1440 | IIT Delhi, C-DOT, DRDO, CDAC | QKD systems, QRNG devices, post-quantum cryptography, quantum satellite communications | 2000 km QKD fibre; Q-Sat launch; PQC standards for India |
+| QuNAT (Quantum Sensing) | Rs.1440 | IIT Madras, NPL India, IIT Roorkee | Quantum gravimeters, magnetometers, atomic clocks, quantum-enhanced lidar, navigation | Field-deployable quantum gravimeter; atomic clock accuracy 10^{-18} |
+| QuMAT (Quantum Materials) | Rs.960 | JNCASR, IISc, IIT Bombay, IIT Kanpur | Superconducting thin films, topological materials, 2D materials, cryogenic packaging, qubit fabrication | Indigenous SC qubit fabrication; topological qubit prototypes; qubit foundry capability |
 
 Table 10.3: India NQM four technology hubs with budget, institutions, focus areas, and 2031 targets.
 
@@ -301,26 +199,30 @@ Table 10.3: India NQM four technology hubs with budget, institutions, focus area
 
 India has a strong foundation of quantum physics research across its premier institutions:
 
-1. IIT Delhi (IIT-D): Quantum cryptography laboratory (Prof. Pramod Hemrajani group), QKD implementations, quantum optics. IBM Quantum Network member. Partner to QuCryptoS hub.
-2. IISc Bangalore: Quantum condensed matter (Prof. Vijay Shenoy), superconducting materials, quantum photonics (Prof. Akshay Naik). Partner to both QuST and QuMAT hubs.
-3. TIFR Mumbai: Atomic physics (BEC group), quantum materials, quantum information theory. Pioneer of quantum optics research in India. Partner to QuST hub.
-4. IIT Bombay: Quantum computing (Prof. Himanshu Tyagi group), quantum information, quantum machine learning. Host institution for QuST hub.
-5. IIT Madras: Quantum sensing (Prof. Anil Prabhakar group), quantum optics, integrated photonics. Host of QuNAT hub.
-6. C-DOT (Centre for Development of Telematics): India's premier telecom R&D institution. Developed the first indigenous BB84 QKD system. Critical partner for QuCryptoS.
-7. DRDO (Defence Research and Development Organisation): Quantum sensing for defence applications, secure quantum communications for military. Partner across multiple NQM hubs.
+- IIT Delhi (IIT-D): Quantum cryptography laboratory (Prof. Pramod Hemrajani group), QKD implementations, quantum optics. IBM Quantum Network member. Partner to QuCryptoS hub.
 
-<div class="box box-generic">
-<p class="box-title"><strong>🇮🇳 India's Quantum Workforce Challenge</strong></p>
+- IISc Bangalore: Quantum condensed matter (Prof. Vijay Shenoy), superconducting materials, quantum photonics (Prof. Akshay Naik). Partner to both QuST and QuMAT hubs.
+
+- TIFR Mumbai: Atomic physics (BEC group), quantum materials, quantum information theory. Pioneer of quantum optics research in India. Partner to QuST hub.
+
+- IIT Bombay: Quantum computing (Prof. Himanshu Tyagi group), quantum information, quantum machine learning. Host institution for QuST hub.
+
+- IIT Madras: Quantum sensing (Prof. Anil Prabhakar group), quantum optics, integrated photonics. Host of QuNAT hub.
+
+- C-DOT (Centre for Development of Telematics): India's premier telecom R&D institution. Developed the first indigenous BB84 QKD system. Critical partner for QuCryptoS.
+
+- DRDO (Defence Research and Development Organisation): Quantum sensing for defence applications, secure quantum communications for military. Partner across multiple NQM hubs.
+
+<div class="box box-real-world">
+<p class="box-title"><strong>🇮🇳  India's Quantum Workforce Challenge</strong></p>
 <p>India trains approximately 22,000 Ph.D. students per year in STEM, but currently fewer than 500 specialise in quantum physics/computing. The NQM includes a dedicated workforce development programme targeting 10,000 quantum-skilled professionals by 2031 -- researchers, engineers, software developers, and quantum-literate industry practitioners. This includes: National Quantum Scholarships (100 per year for Ph.D. in quantum technology at NQM hub institutions); Quantum Fellowships for postdoctoral researchers returning from abroad; Quantum Short Courses for industry professionals (3-6 month intensive programmes); and the Qiskit India Certification Programme (in partnership with IBM Quantum).</p>
 </div>
 
 ## 10.5 Career Pathways in Quantum Computing
 
-<div class="figure-block">
-<figure class="book-figure">
-<img src="content/images/image69.png" alt="">
-<figcaption></figcaption>
-</figure>
+<div class="box box-generic">
+
+<img class="fig-img" src="content/images/image77.png" alt="">
 </div>
 
 **Figure 10.5: Quantum Computing Career Pathways -- Four Primary Roles, Skills and Salary Bands**
@@ -357,18 +259,16 @@ Quantum applications scientists (also called "quantum use case engineers" or "qu
 
 Sub-specialisations by domain: Quantum chemistry applications (requires Ph.D. in computational chemistry or physics; implements VQE/QPE for drug discovery, catalyst design); Quantum finance (requires quantitative finance background; implements QAOA, QAE for portfolio optimisation, risk analysis -- JPMorgan, Goldman Sachs, HSBC); Quantum logistics (implements QAOA for vehicle routing, supply chain -- Volkswagen, DHL, BMW); Quantum machine learning (implements QSVM, QNN for ML acceleration -- IBM, AWS, academic groups).
 
-<div class="box box-generic">
-<p class="box-title"><strong>💼 Quantum Careers in India: Near-Term Outlook (2024-2028)</strong></p>
+<div class="box box-real-world">
+<p class="box-title"><strong>💼  Quantum Careers in India: Near-Term Outlook (2024-2028)</strong></p>
 <p>The NQM and its four hubs will create approximately 3000-5000 direct quantum technology jobs in India by 2028. Indirect employment (quantum-aware software engineers, PQC implementers, quantum-aware chemists and financial analysts) will be 10-20x this number. Key hiring sectors: (1) NQM hub institutions: faculty, postdocs, research engineers, lab technicians; (2) IT sector: TCS, Infosys, Wipro, HCL all have quantum programmes hiring quantum developers and consultants; (3) Defence: DRDO, ISRO quantum sensing and secure communication programmes; (4) Finance: HDFC Bank, SBI, SEBI-regulated institutions migrating to PQC; (5) Pharma: Sun Pharma, Cipla, Biocon evaluating quantum chemistry for drug discovery.</p>
 </div>
 
 ## 10.6 Quantum Career Skills: The Skill Matrix
 
-<div class="figure-block">
-<figure class="book-figure">
-<img src="content/images/image70.png" alt="">
-<figcaption></figcaption>
-</figure>
+<div class="box box-generic">
+
+<img class="fig-img" src="content/images/image78.png" alt="">
 </div>
 
 **Figure 10.6: Quantum Career Skill Requirements by Role (1=Low, 5=Essential)**
@@ -377,30 +277,34 @@ Skill importance heatmap for six quantum career roles across ten skill dimension
 
 Based on the skill matrix, quantum careers share several universal prerequisites:
 
-1. Python programming (advanced level): All quantum SDKs are Python-based. Data structures, object-oriented programming, scientific computing (NumPy, SciPy, Matplotlib), and asynchronous programming are all required.
-2. Linear algebra: Quantum states are vectors; quantum operations are matrices; quantum measurements are projectors. Eigenvalues, tensor products, unitary matrices, Hermitian operators, and the spectral theorem are essential tools for every quantum role.
-3. Quantum mechanics foundations: Dirac notation (|psi>, bra-ket calculus), superposition, entanglement, measurement postulate, density matrices, quantum channels. The equivalent of an M.Sc.-level quantum mechanics course.
-4. Quantum circuit design: Understanding of single-qubit and multi-qubit gates, circuit decomposition, the Bloch sphere, and common circuit patterns (CNOT, Toffoli, Grover, QFT) is required for all technical roles.
+- Python programming (advanced level): All quantum SDKs are Python-based. Data structures, object-oriented programming, scientific computing (NumPy, SciPy, Matplotlib), and asynchronous programming are all required.
+
+- Linear algebra: Quantum states are vectors; quantum operations are matrices; quantum measurements are projectors. Eigenvalues, tensor products, unitary matrices, Hermitian operators, and the spectral theorem are essential tools for every quantum role.
+
+- Quantum mechanics foundations: Dirac notation (|psi>, bra-ket calculus), superposition, entanglement, measurement postulate, density matrices, quantum channels. The equivalent of an M.Sc.-level quantum mechanics course.
+
+- Quantum circuit design: Understanding of single-qubit and multi-qubit gates, circuit decomposition, the Bloch sphere, and common circuit patterns (CNOT, Toffoli, Grover, QFT) is required for all technical roles.
 
 Differentiated skills by role:
 
-1. Hardware roles: Cryogenics, microwave engineering, materials science, device fabrication, LabVIEW instrumentation.
-2. Algorithm roles: Computational complexity theory, abstract algebra, quantum error correction codes, mathematical proof writing.
-3. Software roles: Compiler design, graph algorithms, software architecture, performance optimisation, API design.
-4. Applications roles: Domain expertise (e.g., computational chemistry, quantitative finance), benchmarking methodology, technical communication.
+- Hardware roles: Cryogenics, microwave engineering, materials science, device fabrication, LabVIEW instrumentation.
+
+- Algorithm roles: Computational complexity theory, abstract algebra, quantum error correction codes, mathematical proof writing.
+
+- Software roles: Compiler design, graph algorithms, software architecture, performance optimisation, API design.
+
+- Applications roles: Domain expertise (e.g., computational chemistry, quantitative finance), benchmarking methodology, technical communication.
 
 ## 10.7 Qiskit Developer Certification: Exam Guide and Preparation
 
-<div class="figure-block">
-<figure class="book-figure">
-<img src="content/images/image71.png" alt="">
-<figcaption></figcaption>
-</figure>
+<div class="box box-generic">
+
+<img class="fig-img" src="content/images/image79.png" alt="">
 </div>
 
 **Figure 10.7: Qiskit Ecosystem Architecture and Qiskit Developer Certification Exam Structure**
 
-Left: Qiskit ecosystem five-layer architecture. Layer 1 - Qiskit Terra (core, blue): the foundation layer providing the QuantumCircuit class, quantum gates, the transpiler pipeline, execution backends, and the quantum_info module for density matrices, Pauli operators, and quantum channels. Layer 2 - Qiskit Aer (simulation, teal): high-performance quantum circuit simulation including the StatevectorSimulator, QasmSimulator, pulse simulation, and noise model integration with T1/T2 decoherence and depolarising errors. Layer 3 - Domain Libraries (green): Qiskit Nature (VQE, UCCSD, molecular drivers), Qiskit Finance (QAOA portfolio, QAE), Qiskit Optimization (QUBO, converters), Qiskit Machine Learning (QSVM, QNN). Layer 4 - Qiskit Runtime (purple): IBM cloud execution with Session management, Sampler primitive (probability distributions), Estimator primitive (expectation values), and error mitigation (ZNE, readout correction). Layer 5 - Transpiler & Pulse (orange): circuit compilation to hardware-native gate sets, routing for device connectivity, and pulse-level microwave control via OpenPulse. Right: Qiskit Developer Certification exam structure. Five topic areas with percentage weights: Quantum Circuits (20%, Qiskit QuantumCircuit, gates, statevectors, measurement), Executing Circuits (20%, backends, transpilation, Aer simulation, IBM Quantum job management), Quantum Information (15%, Bloch sphere, density matrices, entanglement, fidelity), Algorithms (30%, the highest weight -- Grover, QFT, QPE, VQE, QAOA, Bernstein-Vazirani, Deutsch-Jozsa, Simon), Noise and Mitigation (15%, noise models, T1/T2, ZNE, readout mitigation). Bottom bar: exam format -- 60 questions, 90 minutes, Pearson VUE proctored, passing score 60%.
+Left: Qiskit ecosystem five-layer architecture. Layer 1 - Qiskit Terra (core, blue): the foundation layer providing the QuantumCircuit class, quantum gates, the transpiler pipeline, execution backends, and the quantum\_info module for density matrices, Pauli operators, and quantum channels. Layer 2 - Qiskit Aer (simulation, teal): high-performance quantum circuit simulation including the StatevectorSimulator, QasmSimulator, pulse simulation, and noise model integration with T1/T2 decoherence and depolarising errors. Layer 3 - Domain Libraries (green): Qiskit Nature (VQE, UCCSD, molecular drivers), Qiskit Finance (QAOA portfolio, QAE), Qiskit Optimization (QUBO, converters), Qiskit Machine Learning (QSVM, QNN). Layer 4 - Qiskit Runtime (purple): IBM cloud execution with Session management, Sampler primitive (probability distributions), Estimator primitive (expectation values), and error mitigation (ZNE, readout correction). Layer 5 - Transpiler & Pulse (orange): circuit compilation to hardware-native gate sets, routing for device connectivity, and pulse-level microwave control via OpenPulse. Right: Qiskit Developer Certification exam structure. Five topic areas with percentage weights: Quantum Circuits (20%, Qiskit QuantumCircuit, gates, statevectors, measurement), Executing Circuits (20%, backends, transpilation, Aer simulation, IBM Quantum job management), Quantum Information (15%, Bloch sphere, density matrices, entanglement, fidelity), Algorithms (30%, the highest weight -- Grover, QFT, QPE, VQE, QAOA, Bernstein-Vazirani, Deutsch-Jozsa, Simon), Noise and Mitigation (15%, noise models, T1/T2, ZNE, readout mitigation). Bottom bar: exam format -- 60 questions, 90 minutes, Pearson VUE proctored, passing score 60%.
 
 ### 10.7.1 Exam Format and Topics
 
@@ -410,32 +314,36 @@ Exam logistics: Administered by Pearson VUE (online proctored or test centre). 6
 
 Exam topics in depth:
 
-1. Quantum Circuits (20%): Create and manipulate QuantumCircuit objects. Apply single-qubit gates (H, X, Y, Z, S, T, Rx, Ry, Rz, U). Apply multi-qubit gates (CNOT, CZ, SWAP, Toffoli, CX). Initialise states. Insert barriers. Measure qubits. Visualise circuits (circuit.draw()). Compose circuits.
-2. Executing Circuits (20%): Use QasmSimulator and StatevectorSimulator. Set shots. Retrieve results (job.result(), result.get_counts()). Transpile circuits for specific backends. Use IBM Quantum backends. Understand Qiskit Runtime's Sampler and Estimator primitives.
-3. Quantum Information (15%): Compute statevectors. Understand the Bloch sphere representation of single-qubit states. Compute density matrices for pure and mixed states. Measure entanglement (concurrence, Schmidt rank). Compute state fidelity. Apply quantum channels.
-4. Algorithms (30%, highest weight): Implement Deutsch-Jozsa algorithm. Implement Bernstein-Vazirani algorithm. Implement Simon's algorithm. Implement Quantum Fourier Transform (QFT). Implement Quantum Phase Estimation (QPE). Implement Grover's search algorithm (oracle construction, diffuser). Implement Variational Quantum Eigensolver (VQE) at a conceptual level.
-5. Noise and Error Mitigation (15%): Understand depolarising noise model. Understand T1 and T2 decoherence. Create noise models in Qiskit Aer. Apply readout error mitigation (calibration matrices). Apply Zero-Noise Extrapolation (ZNE) at a basic level.
+- Quantum Circuits (20%): Create and manipulate QuantumCircuit objects. Apply single-qubit gates (H, X, Y, Z, S, T, Rx, Ry, Rz, U). Apply multi-qubit gates (CNOT, CZ, SWAP, Toffoli, CX). Initialise states. Insert barriers. Measure qubits. Visualise circuits (circuit.draw()). Compose circuits.
+
+- Executing Circuits (20%): Use QasmSimulator and StatevectorSimulator. Set shots. Retrieve results (job.result(), result.get\_counts()). Transpile circuits for specific backends. Use IBM Quantum backends. Understand Qiskit Runtime's Sampler and Estimator primitives.
+
+- Quantum Information (15%): Compute statevectors. Understand the Bloch sphere representation of single-qubit states. Compute density matrices for pure and mixed states. Measure entanglement (concurrence, Schmidt rank). Compute state fidelity. Apply quantum channels.
+
+- Algorithms (30%, highest weight): Implement Deutsch-Jozsa algorithm. Implement Bernstein-Vazirani algorithm. Implement Simon's algorithm. Implement Quantum Fourier Transform (QFT). Implement Quantum Phase Estimation (QPE). Implement Grover's search algorithm (oracle construction, diffuser). Implement Variational Quantum Eigensolver (VQE) at a conceptual level.
+
+- Noise and Error Mitigation (15%): Understand depolarising noise model. Understand T1 and T2 decoherence. Create noise models in Qiskit Aer. Apply readout error mitigation (calibration matrices). Apply Zero-Noise Extrapolation (ZNE) at a basic level.
 
 ### 10.7.2 Study Resources and Preparation Strategy
 
 Recommended preparation sequence (6-month plan for physics M.Sc. students):
 
-1. Months 1-2 (Foundation): Complete the IBM Quantum Learning platform (learning.quantum.ibm.com) -- specifically the "Basics of Quantum Information" and "Fundamentals of Quantum Algorithms" courses. Study Nielsen & Chuang "Quantum Computation and Quantum Information" Chapters 1-4. Run all code examples in Qiskit.
-2. Months 3-4 (Core Qiskit): Work through the Qiskit Textbook (qiskit.org/learn) chapters on circuits, measurements, and algorithms. Implement Deutsch-Jozsa, Bernstein-Vazirani, Simon, QFT, QPE, and Grover from scratch. Run them on both simulators and real IBM Quantum hardware. Study the Qiskit API documentation.
-3. Months 5-6 (Exam Preparation): Take the official IBM Quantum Learning practice exam. Review weak areas. Implement VQE for H2 (Qiskit Nature). Study noise models and ZNE in Qiskit Aer. Time yourself on practice questions. Aim for 80%+ on practice exams before attempting the real exam.
+- Months 1-2 (Foundation): Complete the IBM Quantum Learning platform (learning.quantum.ibm.com) -- specifically the "Basics of Quantum Information" and "Fundamentals of Quantum Algorithms" courses. Study Nielsen & Chuang "Quantum Computation and Quantum Information" Chapters 1-4. Run all code examples in Qiskit.
 
-<div class="box box-tip">
-<p class="box-title"><strong>💡 Top 5 Qiskit Exam Tips</strong></p>
+- Months 3-4 (Core Qiskit): Work through the Qiskit Textbook (qiskit.org/learn) chapters on circuits, measurements, and algorithms. Implement Deutsch-Jozsa, Bernstein-Vazirani, Simon, QFT, QPE, and Grover from scratch. Run them on both simulators and real IBM Quantum hardware. Study the Qiskit API documentation.
+
+- Months 5-6 (Exam Preparation): Take the official IBM Quantum Learning practice exam. Review weak areas. Implement VQE for H2 (Qiskit Nature). Study noise models and ZNE in Qiskit Aer. Time yourself on practice questions. Aim for 80%+ on practice exams before attempting the real exam.
+
+<div class="box box-key-concept">
+<p class="box-title"><strong>💡  Top 5 Qiskit Exam Tips</strong></p>
 <p>(1) Read code, not just concepts: ~50% of questions involve reading Qiskit code and predicting output. Practice extensively with actual code. (2) Know measurement outcomes: Understand that QuantumCircuit.measure() adds classical bits, and that result.get_counts() returns bitstrings in little-endian order (right qubit is qubit 0). (3) Understand transpilation: Know the difference between circuit.decompose(), transpile(), and PassManager. Know what layout and routing do. (4) Grover's algorithm is tested heavily: Know how to construct oracles for specific problems, how to build the diffuser, and what the optimal number of iterations is. (5) The Estimator vs Sampler distinction matters: Sampler returns quasi-probability distributions; Estimator returns expectation values of observables. Know when to use each.</p>
 </div>
 
 ## 10.8 Building a Quantum GitHub Portfolio
 
-<div class="figure-block">
-<figure class="book-figure">
-<img src="content/images/image72.png" alt="">
-<figcaption></figcaption>
-</figure>
+<div class="box box-generic">
+
+<img class="fig-img" src="content/images/image80.png" alt="">
 </div>
 
 **Figure 10.8: Quantum GitHub Portfolio Strategy -- Projects by Level and Repository Best Practices**
@@ -448,28 +356,39 @@ A strong quantum GitHub portfolio demonstrates both technical ability and unders
 
 Beginner project guide -- Bell State and Quantum Teleportation:
 
-1. Create Bell pairs |Phi+> using H + CNOT. Visualise with Bloch sphere before and after.
-2. Implement quantum teleportation: prepare arbitrary |psi> on Alice's qubit, create shared Bell pair, perform Bell measurement, send classical bits, apply corrections on Bob's side.
-3. Verify by running on both Aer simulator (exact) and IBM Quantum hardware (with noise). Show the effect of noise on teleportation fidelity.
-4. Extend to 3-qubit GHZ state: show genuine tripartite entanglement via Mermin inequality violation.
+- Create Bell pairs |Phi+> using H + CNOT. Visualise with Bloch sphere before and after.
+
+- Implement quantum teleportation: prepare arbitrary |psi> on Alice's qubit, create shared Bell pair, perform Bell measurement, send classical bits, apply corrections on Bob's side.
+
+- Verify by running on both Aer simulator (exact) and IBM Quantum hardware (with noise). Show the effect of noise on teleportation fidelity.
+
+- Extend to 3-qubit GHZ state: show genuine tripartite entanglement via Mermin inequality violation.
 
 Intermediate project guide -- QAOA for MaxCut:
 
-1. Generate a random weighted graph G=(V,E) with N=10 nodes. Formulate MaxCut as an Ising Hamiltonian H_C = sum_{(i,j) in E} w_{ij} (1 - Z_i Z_j) / 2.
-2. Implement QAOA with p=1,2,3 layers. Optimise (beta,gamma) with COBYLA for each p. Plot <H_C> vs iterations.
-3. Compare QAOA solution quality with classical greedy and semidefinite programming (SDP) solutions. Plot cut value vs p.
-4. Run on IBM Quantum hardware for p=1 with 10 qubits. Apply ZNE mitigation. Discuss hardware noise impact.
+- Generate a random weighted graph G=(V,E) with N=10 nodes. Formulate MaxCut as an Ising Hamiltonian H\_C = sum\_{(i,j) in E} w\_{ij} (1 - Z\_i Z\_j) / 2.
+
+- Implement QAOA with p=1,2,3 layers. Optimise (beta,gamma) with COBYLA for each p. Plot <H\_C> vs iterations.
+
+- Compare QAOA solution quality with classical greedy and semidefinite programming (SDP) solutions. Plot cut value vs p.
+
+- Run on IBM Quantum hardware for p=1 with 10 qubits. Apply ZNE mitigation. Discuss hardware noise impact.
 
 ### 10.8.2 Repository Structure and Documentation
 
 Good repository structure makes the difference between a portfolio that impresses employers and one that is ignored:
 
-1. README.md (most important file): Start with the physics motivation (one paragraph answering "why is this quantum problem interesting?"). Include a clear diagram or figure. Provide installation instructions (conda/pip). Show example usage with expected output. Include results and conclusions. Add references to papers.
-2. requirements.txt or pyproject.toml: Pin all dependencies with specific versions (qiskit==1.2.0, qiskit-aer==0.14.0, etc.). Include a conda environment file (environment.yml) for easy reproduction.
-3. notebooks/: Jupyter notebooks for exploratory analysis and result visualisation. One notebook per major result. Name clearly: "01_circuit_generation.ipynb", "02_vqe_h2_results.ipynb".
-4. src/: Modular Python source code for reusable components. Separate circuits, optimisers, and analysis into different modules. Include docstrings for all functions.
-5. tests/: Unit tests using pytest. Test that circuits produce expected statevectors. Test that algorithms converge on known problems.
-6. results/: Pre-computed results for figures (so reviewers can reproduce plots without re-running QPU jobs). Include raw data files and a data README.
+- README.md (most important file): Start with the physics motivation (one paragraph answering "why is this quantum problem interesting?"). Include a clear diagram or figure. Provide installation instructions (conda/pip). Show example usage with expected output. Include results and conclusions. Add references to papers.
+
+- requirements.txt or pyproject.toml: Pin all dependencies with specific versions (qiskit==1.2.0, qiskit-aer==0.14.0, etc.). Include a conda environment file (environment.yml) for easy reproduction.
+
+- notebooks/: Jupyter notebooks for exploratory analysis and result visualisation. One notebook per major result. Name clearly: "01\_circuit\_generation.ipynb", "02\_vqe\_h2\_results.ipynb".
+
+- src/: Modular Python source code for reusable components. Separate circuits, optimisers, and analysis into different modules. Include docstrings for all functions.
+
+- tests/: Unit tests using pytest. Test that circuits produce expected statevectors. Test that algorithms converge on known problems.
+
+- results/: Pre-computed results for figures (so reviewers can reproduce plots without re-running QPU jobs). Include raw data files and a data README.
 
 ### 10.8.3 Community Engagement and Open-Source Contributions
 
@@ -477,25 +396,31 @@ Contributing to open-source quantum projects is the single most effective way to
 
 How to contribute to Qiskit:
 
-1. Start with documentation contributions (fixing typos, improving examples): these are always welcome and require no deep codebase knowledge.
-2. Tackle "good first issue" tagged GitHub issues in the qiskit-terra, qiskit-nature, or qiskit-finance repositories.
-3. Write new tutorials for the Qiskit Textbook or IBM Quantum Learning platform.
-4. Implement a recently published quantum algorithm in Qiskit and submit a pull request with tests and documentation.
-5. Report bugs with detailed reproduction code -- this is a valuable contribution even without a fix.
+- Start with documentation contributions (fixing typos, improving examples): these are always welcome and require no deep codebase knowledge.
+
+- Tackle "good first issue" tagged GitHub issues in the qiskit-terra, qiskit-nature, or qiskit-finance repositories.
+
+- Write new tutorials for the Qiskit Textbook or IBM Quantum Learning platform.
+
+- Implement a recently published quantum algorithm in Qiskit and submit a pull request with tests and documentation.
+
+- Report bugs with detailed reproduction code -- this is a valuable contribution even without a fix.
 
 Community engagement platforms:
 
-1. Qiskit Slack (ibm.co/joinqiskitslack): Active community of 20,000+ developers. Ask questions, share projects, find collaborators.
-2. QHack (annual hackathon by Xanadu, typically February-March): 72-hour quantum computing hackathon with prizes and job visibility.
-3. IBM Quantum Network Hackathons: Annual events for Network member institutions.
-4. Qiskit Advocate Program: Apply after 6+ months of community contribution; provides mentoring, early hardware access, and IBM conference invitations.
-5. arXiv (quant-ph section): Read new papers weekly. Even without original research, a paper summary blog on Medium or LinkedIn builds community presence.
+- Qiskit Slack (ibm.co/joinqiskitslack): Active community of 20,000+ developers. Ask questions, share projects, find collaborators.
 
-<div class="figure-block">
-<figure class="book-figure">
-<img src="content/images/image73.png" alt="">
-<figcaption></figcaption>
-</figure>
+- QHack (annual hackathon by Xanadu, typically February-March): 72-hour quantum computing hackathon with prizes and job visibility.
+
+- IBM Quantum Network Hackathons: Annual events for Network member institutions.
+
+- Qiskit Advocate Program: Apply after 6+ months of community contribution; provides mentoring, early hardware access, and IBM conference invitations.
+
+- arXiv (quant-ph section): Read new papers weekly. Even without original research, a paper summary blog on Medium or LinkedIn builds community presence.
+
+<div class="box box-generic">
+
+<img class="fig-img" src="content/images/image81.png" alt="">
 </div>
 
 **Figure 10.9: Open-Source Quantum Computing Ecosystem -- Libraries, SDKs and Contribution Opportunities**
@@ -504,11 +429,9 @@ Overview of the open-source quantum computing software ecosystem organised by ca
 
 ## 10.9 The Quantum Computing Roadmap: Looking to 2040
 
-<div class="figure-block">
-<figure class="book-figure">
-<img src="content/images/image74.png" alt="">
-<figcaption></figcaption>
-</figure>
+<div class="box box-generic">
+
+<img class="fig-img" src="content/images/image82.png" alt="">
 </div>
 
 **Figure 10.10: Quantum Computing Roadmap 2024-2040: Physical Qubits, Logical Qubits and Gate Error Rate**
@@ -517,9 +440,11 @@ Dual-axis roadmap chart showing three key hardware metrics from 2024 to 2040. Bl
 
 The quantum computing roadmap reveals three distinct eras, each with different implications for practitioners and students:
 
-1. NISQ Era (2024-2028): 100-10,000 physical qubits, no fault tolerance, error mitigation (ZNE, PEC) essential, gate error rates 0.1-0.01%. Applications: utility-scale simulations (IBM 2023 result extended), QAOA for small optimisation problems, VQE for small molecules, quantum ML research. Career focus: error mitigation algorithms, NISQ-compatible ansatze, hardware characterisation.
-2. Early Fault-Tolerant Era (2028-2033): 10,000-1,000,000 physical qubits, 10-500 logical qubits, first fault-tolerant algorithms, gate error rates 0.001-0.01%. Applications: QPE for small drug molecules, QAOA for larger optimisation problems, quantum-enhanced Monte Carlo for finance, small-scale Hubbard model simulation. Career focus: quantum error correction codes, logical gate compilation, fault-tolerant algorithm design.
-3. Full Fault-Tolerant Era (2033+): Millions of physical qubits, thousands of logical qubits, arbitrary fault-tolerant computation. Applications: FeMoco QPE, RSA cryptanalysis (Shor's), large-scale chemistry simulation, full 2D Hubbard model, Grover-accelerated database search. Career focus: algorithm implementation, domain-specific quantum advantage, quantum-classical hybrid architectures.
+- NISQ Era (2024-2028): 100-10,000 physical qubits, no fault tolerance, error mitigation (ZNE, PEC) essential, gate error rates 0.1-0.01%. Applications: utility-scale simulations (IBM 2023 result extended), QAOA for small optimisation problems, VQE for small molecules, quantum ML research. Career focus: error mitigation algorithms, NISQ-compatible ansatze, hardware characterisation.
+
+- Early Fault-Tolerant Era (2028-2033): 10,000-1,000,000 physical qubits, 10-500 logical qubits, first fault-tolerant algorithms, gate error rates 0.001-0.01%. Applications: QPE for small drug molecules, QAOA for larger optimisation problems, quantum-enhanced Monte Carlo for finance, small-scale Hubbard model simulation. Career focus: quantum error correction codes, logical gate compilation, fault-tolerant algorithm design.
+
+- Full Fault-Tolerant Era (2033+): Millions of physical qubits, thousands of logical qubits, arbitrary fault-tolerant computation. Applications: FeMoco QPE, RSA cryptanalysis (Shor's), large-scale chemistry simulation, full 2D Hubbard model, Grover-accelerated database search. Career focus: algorithm implementation, domain-specific quantum advantage, quantum-classical hybrid architectures.
 
 For students entering the quantum field in 2024: the NISQ era will define your first 5-7 years of professional work. Deep expertise in variational algorithms (VQE, QAOA), error mitigation, Qiskit programming, and quantum chemistry/finance applications will be highly valued throughout this period. The transition to fault-tolerant computing will require a second phase of learning (quantum error correction, fault-tolerant gate sets, logical qubit architectures) -- but the foundations built in the NISQ era will remain essential.
 
@@ -531,254 +456,224 @@ For students entering the quantum field in 2024: the NISQ era will define your f
 
 *Instructions: Answer each question in 3–6 lines.*
 
-**Q1.** What is meant by the global quantum technology market?
+**Q1.**  What is meant by the global quantum technology market?
 
 *[§10.1 — The Global Quantum Market]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q2.** Name the four major segments of the quantum technology market.
+**Q2.**  Name the four major segments of the quantum technology market.
 
 *[§10.1 — The Global Quantum Market]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q3.** What is the role of quantum hardware companies?
-
-*[§10.2 — The Quantum Industry Ecosystem]*
-
-____________________________________________________________________________________________________
-
-____________________________________________________________________________________________________
-
-____________________________________________________________________________________________________
-
-**Q4.** What are cloud quantum computing platforms?
+**Q3.**  What is the role of quantum hardware companies?
 
 *[§10.2 — The Quantum Industry Ecosystem]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q5.** What is post-quantum cryptography (PQC)?
+**Q4.**  What are cloud quantum computing platforms?
 
-*[§10.3 — Post-Quantum Cryptography]*
+*[§10.2 — The Quantum Industry Ecosystem]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q6.** Why is Shor’s algorithm considered a threat to classical cryptography?
-
-*[§10.3 — Post-Quantum Cryptography]*
-
-____________________________________________________________________________________________________
-
-____________________________________________________________________________________________________
-
-____________________________________________________________________________________________________
-
-**Q7.** What is a Harvest-Now-Decrypt-Later attack?
+**Q5.**  What is post-quantum cryptography (PQC)?
 
 *[§10.3 — Post-Quantum Cryptography]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q8.** Name the major NIST PQC standards.
+**Q6.**  Why is Shor’s algorithm considered a threat to classical cryptography?
 
 *[§10.3 — Post-Quantum Cryptography]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q9.** What is India’s National Quantum Mission (NQM)?
+**Q7.**  What is a Harvest-Now-Decrypt-Later attack?
+
+*[§10.3 — Post-Quantum Cryptography]*
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Q8.**  Name the major NIST PQC standards.
+
+*[§10.3 — Post-Quantum Cryptography]*
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**Q9.**  What is India’s National Quantum Mission (NQM)?
 
 *[§10.4 — India's National Quantum Mission (NQM)]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q10.** Name the four major technology hubs under NQM.
+**Q10.**  Name the four major technology hubs under NQM.
 
 *[§10.4 — India's National Quantum Mission (NQM)]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q11.** What is the role of Qiskit in quantum computing?
+**Q11.**  What is the role of Qiskit in quantum computing?
 
 *[§10.7 — Qiskit Developer Certification]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q12.** What skills are important for a quantum software developer?
+**Q12.**  What skills are important for a quantum software developer?
 
 *[§10.6 — Quantum Career Skills: The Skill Matrix]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q13.** What is meant by quantum utility?
+**Q13.**  What is meant by quantum utility?
 
 *[§10.9 — The Quantum Computing Roadmap]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q14.** What is Quantum Volume (QV)?
+**Q14.**  What is Quantum Volume (QV)?
 
 *[§10.6 — Quantum Career Skills: The Skill Matrix]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-**Q15.** Why is open-source contribution important in a quantum computing career?
+**Q15.**  Why is open-source contribution important in a quantum computing career?
 
 *[§10.8 — Building a Quantum GitHub Portfolio]*
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-____________________________________________________________________________________________________
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 ## Model Answers — Chapter 10
 
 **Answer 1:**
 
-<div class="box box-equation">
-<p>The global quantum technology market refers to the worldwide ecosystem of quantum hardware, software, services, and security technologies.</p>
-</div>
+The global quantum technology market refers to the worldwide ecosystem of quantum hardware, software, services, and security technologies.
 
 **Answer 2:**
 
-<div class="box box-equation">
-<p>The four major segments are quantum hardware, quantum software and cloud platforms, quantum services and consulting, and post-quantum cryptography.</p>
-</div>
+The four major segments are quantum hardware, quantum software and cloud platforms, quantum services and consulting, and post-quantum cryptography.
 
 **Answer 3:**
 
-<div class="box box-equation">
-<p>Quantum hardware companies develop physical quantum computers and supporting infrastructure such as cryogenic systems and control electronics.</p>
-</div>
+Quantum hardware companies develop physical quantum computers and supporting infrastructure such as cryogenic systems and control electronics.
 
 **Answer 4:**
 
-<div class="box box-equation">
-<p>Cloud quantum computing platforms provide remote access to quantum processors through the internet.</p>
-</div>
+Cloud quantum computing platforms provide remote access to quantum processors through the internet.
 
 **Answer 5:**
 
-<div class="box box-equation">
-<p>Post-quantum cryptography consists of cryptographic algorithms designed to remain secure against attacks from quantum computers.</p>
-</div>
+Post-quantum cryptography consists of cryptographic algorithms designed to remain secure against attacks from quantum computers.
 
 **Answer 6:**
 
-<div class="box box-equation">
-<p>Shor’s algorithm can factor large integers and solve discrete logarithm problems efficiently, threatening RSA and ECC cryptosystems.</p>
-</div>
+Shor’s algorithm can factor large integers and solve discrete logarithm problems efficiently, threatening RSA and ECC cryptosystems.
 
 **Answer 7:**
 
-<div class="box box-equation">
-<p>In a Harvest-Now-Decrypt-Later attack, encrypted data is collected today and stored until future quantum computers become capable of decrypting it.</p>
-</div>
+In a Harvest-Now-Decrypt-Later attack, encrypted data is collected today and stored until future quantum computers become capable of decrypting it.
 
 **Answer 8:**
 
-<div class="box box-equation">
-<p>Major NIST PQC standards include CRYSTALS-Kyber, CRYSTALS-Dilithium, and SPHINCS+.</p>
-</div>
+Major NIST PQC standards include CRYSTALS-Kyber, CRYSTALS-Dilithium, and SPHINCS+.
 
 **Answer 9:**
 
-<div class="box box-equation">
-<p>India’s National Quantum Mission is a government initiative launched to develop quantum technologies, infrastructure, research hubs, and skilled manpower.</p>
-</div>
+India’s National Quantum Mission is a government initiative launched to develop quantum technologies, infrastructure, research hubs, and skilled manpower.
 
 **Answer 10:**
 
-<div class="box box-equation">
-<p>The four hubs are QuST, QuCryptoS, QuNAT, and QuMAT.</p>
-</div>
+The four hubs are QuST, QuCryptoS, QuNAT, and QuMAT.
 
 **Answer 11:**
 
-<div class="box box-equation">
-<p>Qiskit is an open-source quantum software development kit used for creating, simulating, and executing quantum circuits.</p>
-</div>
+Qiskit is an open-source quantum software development kit used for creating, simulating, and executing quantum circuits.
 
 **Answer 12:**
 
-<div class="box box-equation">
-<p>Important skills include Python programming, linear algebra, quantum algorithms, quantum hardware understanding, and software development.</p>
-</div>
+Important skills include Python programming, linear algebra, quantum algorithms, quantum hardware understanding, and software development.
 
 **Answer 13:**
 
-<div class="box box-equation">
-<p>Quantum utility refers to the stage where quantum computers perform useful tasks beyond the practical capabilities of classical systems for specific applications.</p>
-</div>
+Quantum utility refers to the stage where quantum computers perform useful tasks beyond the practical capabilities of classical systems for specific applications.
 
 **Answer 14:**
 
-<div class="box box-equation">
-<p>Quantum Volume is a performance metric that measures the effective computational capability of a quantum computer by combining qubit count, connectivity, and gate fidelity.</p>
-</div>
+Quantum Volume is a performance metric that measures the effective computational capability of a quantum computer by combining qubit count, connectivity, and gate fidelity.
 
 **Answer 15:**
 
-<div class="box box-equation">
-<p>Open-source contribution helps students gain practical experience, showcase projects, collaborate with the quantum community, and improve employability.</p>
-</div>
+Open-source contribution helps students gain practical experience, showcase projects, collaborate with the quantum community, and improve employability.
 
 ## Solved Examples — Chapter 10
 
-## Example 10.1 Quantum Market Segment Sizing
+### Example 10.1 Quantum Market Segment Sizing
 
-<div class="box box-generic">
-<p class="box-title"><strong>📝 Problem</strong></p>
+<div class="box box-solved-problem">
+<p class="box-title"><strong>📝  Problem</strong></p>
 <p>In 2024, the global quantum technology market has hardware at $2.1B, software at $1.2B, services at $0.8B, and PQC at $1.5B. (a) What is the total market? (b) What percentage is PQC? (c) If PQC grows at 55% CAGR to 2030, what will its 2030 value be?</p>
 </div>
 
@@ -788,17 +683,14 @@ ________________________________________________________________________________
 
 (b) PQC percentage = 1.5/5.6 = 26.8% of total market
 
-(c) PQC ∈ 2030 = 1.5 x (1.55)^6 = 1.5 x 21.26 = $ 31.9 billion
+This explosive growth reflects the urgency of the migration mandate for all RSA-dependent systems.
 
-<div class="box box-equation">
-<p>This explosive growth reflects the urgency of the migration mandate for all RSA-dependent systems.</p>
-<p>Note: the PQC market grows faster than hardware because: (1) it affects ALL encrypted systems (not just QC adopters); (2) regulatory mandates create non-optional demand; (3) migration is required even before a quantum threat materialises.</p>
-</div>
+Note: the PQC market grows faster than hardware because: (1) it affects ALL encrypted systems (not just QC adopters); (2) regulatory mandates create non-optional demand; (3) migration is required even before a quantum threat materialises.
 
-## Example 10.2 Shor's Algorithm Resource Estimate
+### Example 10.2 Shor's Algorithm Resource Estimate
 
-<div class="box box-generic">
-<p class="box-title"><strong>📝 Problem</strong></p>
+<div class="box box-solved-problem">
+<p class="box-title"><strong>📝  Problem</strong></p>
 <p>Shor's algorithm for factoring an n-bit RSA key requires O(n^3) quantum gates. (a) Compare the number of quantum gates needed for RSA-1024 vs RSA-2048. (b) If RSA-2048 requires approximately 10^10 Toffoli gates on a fault-tolerant quantum computer with a logical Toffoli gate time of 10 microseconds, how long does it take to break RSA-2048?</p>
 </div>
 
@@ -806,24 +698,24 @@ ________________________________________________________________________________
 
 (a) Gates scale as n^3: RSA-1024 requires (1024)^3 ~ 1.07 x 10^9 gates.
 
-<div class="box box-equation">
-<p>RSA-2048 requires (2048)^3 ~ 8.59 x 10^9 gates.</p>
-<p>Ratio: 8.59/1.07 = 8x more gates for RSA - 2048 than RSA - 1024 (2^3 = 8, as expected n^3 scaling).</p>
-</div>
+RSA-2048 requires (2048)^3 ~ 8.59 x 10^9 gates.
+
+Ratio:
 
 (b) Time = number of gates x gate time (in series)
 
-<div class="box box-equation">
-<p>= 10^10 gates x 10 x 10^{-6} s/gate = 10^5 seconds = 28 hours</p>
-<p>This assumes serial gate execution; parallelism reduces this further.</p>
-<p>Implication: A fault-tolerant quantum computer could break RSA-2048 in approximately 1 day.</p>
-<p>Modern estimates (Banegas et al. 2021): 4.2 billion physical qubits, 4300 logical qubits, ~10 hours.</p>
-</div>
+= 10^10 gates x 10 x 10^{-6} s/gate = 10^5 seconds = 28 hours
 
-## Example 10.3 CRYSTALS-Kyber Key Size Comparison
+This assumes serial gate execution; parallelism reduces this further.
 
-<div class="box box-generic">
-<p class="box-title"><strong>📝 Problem</strong></p>
+Implication: A fault-tolerant quantum computer could break RSA-2048 in approximately 1 day.
+
+Modern estimates (Banegas et al. 2021): 4.2 billion physical qubits, 4300 logical qubits, ~10 hours.
+
+### Example 10.3 CRYSTALS-Kyber Key Size Comparison
+
+<div class="box box-solved-problem">
+<p class="box-title"><strong>📝  Problem</strong></p>
 <p>Compare CRYSTALS-Kyber-768 with RSA-2048 for key encapsulation. Kyber-768 has: public key 1184 bytes, secret key 2400 bytes, ciphertext 1088 bytes. RSA-2048 has: public key 256 bytes, ciphertext 256 bytes. (a) What is the size overhead of Kyber vs RSA? (b) For HTTPS, where a TLS 1.3 handshake transmits one public key and one ciphertext, what is the bandwidth overhead?</p>
 </div>
 
@@ -831,25 +723,26 @@ ________________________________________________________________________________
 
 (a) Public key overhead: Kyber 1184 / RSA 256 = 4.6x larger
 
-<div class="box box-equation">
-<p>Ciphertext overhead: Kyber 1088 / RSA 256 = 4.25x larger</p>
-</div>
+Ciphertext overhead: Kyber 1088 / RSA 256 = 4.25x larger
 
 (b) TLS 1.3 handshake (PQ KEM): public key + ciphertext
 
-<div class="box box-equation">
-<p>RSA-2048: 256 + 256 = 512 bytes</p>
-<p>Kyber-768: 1184 + 1088 = 2272 bytes</p>
-<p>Bandwidth overhead: 2272/512 = 4.44x more bandwidth for Kyber vs RSA</p>
-<p>In practice: 2272 - 512 = 1760 extra bytes per TLS handshake.</p>
-<p>At 100 Mbps connection, 1760 bytes = 0.14 ms overhead. For most applications: negligible.</p>
-<p>For high-frequency trading (microsecond latency requirements), PQC migration requires careful optimisation.</p>
-</div>
+RSA-2048: 256 + 256 = 512 bytes
 
-## Example 10.4 NQM Budget Allocation
+Kyber-768: 1184 + 1088 = 2272 bytes
 
-<div class="box box-generic">
-<p class="box-title"><strong>📝 Problem</strong></p>
+Bandwidth overhead: 2272/512 = 4.44x more bandwidth for Kyber vs RSA
+
+In practice: 2272 - 512 = 1760 extra bytes per TLS handshake.
+
+At 100 Mbps connection, 1760 bytes = 0.14 ms overhead. For most applications: negligible.
+
+For high-frequency trading (microsecond latency requirements), PQC migration requires careful optimisation.
+
+### Example 10.4 NQM Budget Allocation
+
+<div class="box box-solved-problem">
+<p class="box-title"><strong>📝  Problem</strong></p>
 <p>India NQM total budget is Rs.6003 crore over 8 years (2023-2031). (a) Average annual budget in Rs. crore. (b) Average annual budget in USD (assuming 1 USD = Rs.83). (c) Compare with the US National Quantum Initiative annual budget. (d) How many Ph.D. stipends at Rs.35,000/month could the QuST hub (Rs.1800 crore) fund over 8 years?</p>
 </div>
 
@@ -861,23 +754,22 @@ ________________________________________________________________________________
 
 (c) US NQI annual funding ~ $900 million/year (FY2024, including agency programmes).
 
-<div class="box box-equation">
-<p>India NQM is approximately $90M/$900M = 10% of US quantum investment -- significant but substantially smaller.</p>
-<p>Context: India's R&D spending is ~0.7% of GDP vs USA's 3.5%, so NQM at $90M/year represents a relatively large commitment.</p>
-</div>
+India NQM is approximately $90M/$900M = 10% of US quantum investment -- significant but substantially smaller.
+
+Context: India's R&D spending is ~0.7% of GDP vs USA's 3.5%, so NQM at $90M/year represents a relatively large commitment.
 
 (d) QuST budget = Rs.1800 crore over 8 years = Rs.225 crore/year
 
-<div class="box box-equation">
-<p>Ph.D. stipend + overhead ~ Rs.35,000/month x 12 = Rs.4.2 lakh/year, plus Rs.1 lakh overhead = Rs.5.2 lakh/student/year</p>
-<p>Number of Ph.D. students = Rs.225 crore / Rs.5.2 lakh = 4327 equivalent student-years.</p>
-<p>If each Ph.D. takes 5 years: QuST could fund ~865 Ph.D. students simultaneously in steady state.</p>
-</div>
+Ph.D. stipend + overhead ~ Rs.35,000/month x 12 = Rs.4.2 lakh/year, plus Rs.1 lakh overhead = Rs.5.2 lakh/student/year
 
-## Example 10.5 Qiskit Certification Preparation Planning
+Number of Ph.D. students = Rs.225 crore / Rs.5.2 lakh = 4327 equivalent student-years.
 
-<div class="box box-generic">
-<p class="box-title"><strong>📝 Problem</strong></p>
+If each Ph.D. takes 5 years: QuST could fund ~865 Ph.D. students simultaneously in steady state.
+
+### Example 10.5 Qiskit Certification Preparation Planning
+
+<div class="box box-solved-problem">
+<p class="box-title"><strong>📝  Problem</strong></p>
 <p>An M.Sc. Physics student with Python proficiency (intermediate) and quantum mechanics background (good) wants to pass the Qiskit Developer exam in 6 months. Design a weekly study plan specifying: (a) resources, (b) weekly hours commitment, (c) key milestones.</p>
 </div>
 
@@ -887,28 +779,22 @@ Recommended 6-month plan (assuming 10 hours/week):
 
 Months 1-2 (Foundations, 80 hours): IBM Quantum Learning courses "Basics of Quantum Info" + "Fundamentals of Algorithms" (40h). Qiskit Textbook Chapters 1-4 (20h). Practice: implement circuits from every chapter, run on IBM Quantum hardware (20h).
 
-<div class="box box-equation">
-<p>Milestone: Can build any single-qubit and basic multi-qubit circuit, run on simulator and real hardware.</p>
-</div>
+Milestone: Can build any single-qubit and basic multi-qubit circuit, run on simulator and real hardware.
 
 Months 3-4 (Algorithms, 80 hours): Implement Deutsch-Jozsa, Bernstein-Vazirani, Simon, QFT, QPE, Grover from scratch (50h). Run all on simulator + hardware. Implement VQE for H2 using Qiskit Nature (30h).
 
-<div class="box box-equation">
-<p>Milestone: Can implement all standard algorithms without referring to documentation.</p>
-</div>
+Milestone: Can implement all standard algorithms without referring to documentation.
 
 Months 5-6 (Exam Prep, 80 hours): Complete all Qiskit API documentation (30h). Practice 200+ exam-style questions (IBM practice exam + community resources) (30h). Review noise models, ZNE in Aer (20h).
 
-<div class="box box-equation">
-<p>Milestone: Consistently scoring 80%+ on practice exams.</p>
-</div>
+Milestone: Consistently scoring 80%+ on practice exams.
 
 Total: 240 hours over 6 months = 10 hours/week. Adjust based on background.
 
-## Example 10.6 GitHub Portfolio Career ROI
+### Example 10.6 GitHub Portfolio Career ROI
 
-<div class="box box-generic">
-<p class="box-title"><strong>📝 Problem</strong></p>
+<div class="box box-solved-problem">
+<p class="box-title"><strong>📝  Problem</strong></p>
 <p>A student has 3 months to build a quantum GitHub portfolio before job applications. They can invest 15 hours/week. (a) How many projects can they realistically complete? (b) Rank the following by ROI for job applications: (i) 10 beginner circuits, (ii) 1 complete VQE project with hardware results, (iii) 1 merged PR to Qiskit, (iv) 5 intermediate projects.</p>
 </div>
 
@@ -916,25 +802,26 @@ Total: 240 hours over 6 months = 10 hours/week. Adjust based on background.
 
 (a) Projects per 3 months at 15 hours/week = 195 total hours.
 
-<div class="box box-equation">
-<p>Beginner project: 5-10 hours each; Intermediate: 20-40 hours each; Advanced: 60-100 hours each.</p>
-<p>Realistic: 2-3 intermediate projects OR 1 advanced project + 2 beginner projects.</p>
-</div>
+Beginner project: 5-10 hours each; Intermediate: 20-40 hours each; Advanced: 60-100 hours each.
+
+Realistic: 2-3 intermediate projects OR 1 advanced project + 2 beginner projects.
 
 (b) ROI ranking for job applications (highest first):
 
-<div class="box box-equation">
-<p>1. One merged PR to Qiskit (best): demonstrates actual engineering skill to the community; permanent public record; referenced by Qiskit team; signals both skill and initiative. ~20-30 hours for a substantive contribution.</p>
-<p>2. One complete VQE project with hardware results: shows end-to-end competency (chemistry motivation, Qiskit Nature, optimiser, hardware run, ZNE, analysis). ~40 hours.</p>
-<p>3. Five intermediate projects: breadth demonstrates versatility and sustained effort. ~100-150 hours.</p>
-<p>4. Ten beginner circuits: low ROI because any student can do this; demonstrates basics but not depth.</p>
-<p>Recommendation: 1 Qiskit PR + 1 VQE project + 2 intermediate projects = highest ROI for 195 hours.</p>
-</div>
+1. One merged PR to Qiskit (best): demonstrates actual engineering skill to the community; permanent public record; referenced by Qiskit team; signals both skill and initiative. ~20-30 hours for a substantive contribution.
 
-## Example 10.7 Post-Quantum Security Timeline for Indian Banks
+2. One complete VQE project with hardware results: shows end-to-end competency (chemistry motivation, Qiskit Nature, optimiser, hardware run, ZNE, analysis). ~40 hours.
 
-<div class="box box-generic">
-<p class="box-title"><strong>📝 Problem</strong></p>
+3. Five intermediate projects: breadth demonstrates versatility and sustained effort. ~100-150 hours.
+
+4. Ten beginner circuits: low ROI because any student can do this; demonstrates basics but not depth.
+
+Recommendation: 1 Qiskit PR + 1 VQE project + 2 intermediate projects = highest ROI for 195 hours.
+
+### Example 10.7 Post-Quantum Security Timeline for Indian Banks
+
+<div class="box box-solved-problem">
+<p class="box-title"><strong>📝  Problem</strong></p>
 <p>A large Indian bank has: 5 million RSA-2048 encrypted customer records; 200,000 TLS connections/day using ECDH-256; 10 million RSA-signed transactions/year. (a) Estimate the data volume at HNDL risk. (b) What is the migration timeline urgency given a 10-year Q-Day estimate? (c) What is the estimated PQC migration cost?</p>
 </div>
 
@@ -942,30 +829,28 @@ Total: 240 hours over 6 months = 10 hours/week. Adjust based on background.
 
 (a) HNDL risk estimate:
 
-<div class="box box-equation">
-<p>Customer records: RSA-2048 encrypted data -- if stored for 30 years, all are at risk immediately.</p>
-<p>TLS connections: 200,000/day x 365 = 73 million connections/year. Each connection has session keys that protect 1 MB of data on average = 73 TB/year of transaction data at HNDL risk.</p>
-<p>Transactions: 10 million RSA signatures/year -- authentication data at risk if records kept >10 years.</p>
-</div>
+Customer records: RSA-2048 encrypted data -- if stored for 30 years, all are at risk immediately.
+
+TLS connections: 200,000/day x 365 = 73 million connections/year. Each connection has session keys that protect 1 MB of data on average = 73 TB/year of transaction data at HNDL risk.
+
+Transactions: 10 million RSA signatures/year -- authentication data at risk if records kept >10 years.
 
 (b) Timeline urgency (Q-Day = 2035 estimate):
 
-<div class="box box-equation">
-<p>Migration time typically 5-7 years for a large bank (assessment, procurement, testing, deployment, certification).</p>
-<p>To complete by 2035: must start NOW (2024-2025). This is exactly the message from RBI and CERT-In guidelines.</p>
-</div>
+Migration time typically 5-7 years for a large bank (assessment, procurement, testing, deployment, certification).
+
+To complete by 2035: must start NOW (2024-2025). This is exactly the message from RBI and CERT-In guidelines.
 
 (c) PQC migration cost estimate (industry benchmark: $50-200M for a large global bank):
 
-<div class="box box-equation">
-<p>For a mid-size Indian bank: (1) HSM upgrades: 500 HSMs x $10,000 = $5M; (2) TLS library updates: 200 servers x $5,000 staff cost = $1M; (3) PKI infrastructure overhaul: $3-8M; (4) Testing and certification: $2-5M.</p>
-<p>Total estimate: $11-19M for migration. Annual PQC licensing: $500K-2M ongoing.</p>
-</div>
+For a mid-size Indian bank: (1) HSM upgrades: 500 HSMs x $10,000 = $5M; (2) TLS library updates: 200 servers x $5,000 staff cost = $1M; (3) PKI infrastructure overhaul: $3-8M; (4) Testing and certification: $2-5M.
 
-## Example 10.8 Quantum Career Salary Negotiation
+Total estimate: $11-19M for migration. Annual PQC licensing: $500K-2M ongoing.
 
-<div class="box box-generic">
-<p class="box-title"><strong>📝 Problem</strong></p>
+### Example 10.8 Quantum Career Salary Negotiation
+
+<div class="box box-solved-problem">
+<p class="box-title"><strong>📝  Problem</strong></p>
 <p>A student completes an M.Sc. in Physics with Qiskit Developer Certification and a GitHub portfolio including one VQE project and one QAOA project. They receive two offers: (A) IIT-NQM hub postdoc: Rs.70,000/month + Rs.50,000 annual travel grant; (B) TCS Quantum Practice: Rs.12L/year base + 20% performance bonus potential. (a) Which offers more compensation in year 1? (b) After 5 years, project likely trajectories. (c) What non-monetary factors should they consider?</p>
 </div>
 
@@ -973,19 +858,19 @@ Total: 240 hours over 6 months = 10 hours/week. Adjust based on background.
 
 (a) Year 1 comparison:
 
-<div class="box box-equation">
-<p>Offer A (NQM Postdoc): Rs.70,000/month x 12 = Rs.8.4L + Rs.0.5L travel = Rs.8.9L/year = ~$10,700/year</p>
-<p>Offer B (TCS Quantum): Rs.12L base + 20% bonus target = Rs.14.4L/year = ~$17,300/year</p>
-<p>Offer B pays 62% more in year 1.</p>
-</div>
+Offer A (NQM Postdoc): Rs.70,000/month x 12 = Rs.8.4L + Rs.0.5L travel = Rs.8.9L/year = ~$10,700/year
+
+Offer B (TCS Quantum): Rs.12L base + 20% bonus target = Rs.14.4L/year = ~$17,300/year
+
+Offer B pays 62% more in year 1.
 
 (b) Five-year trajectories:
 
-<div class="box box-equation">
-<p>Offer A: Postdoc typically leads to academic or senior research position in 2-3 years. After 5 years: likely Research Scientist at NQM hub or faculty position at Rs.1.2-2L/month (Rs.14-24L/year). But 2 more years of postdoc + faculty job search uncertainty.</p>
-<p>Offer B: TCS to senior consultant/specialist in 3-5 years. After 5 years at TCS Quantum: Rs.25-40L/year. Potential to move to IBM Consulting or QC Ware at Rs.50-80L.</p>
-<p>Industry pays more at all career stages in India currently.</p>
-</div>
+Offer A: Postdoc typically leads to academic or senior research position in 2-3 years. After 5 years: likely Research Scientist at NQM hub or faculty position at Rs.1.2-2L/month (Rs.14-24L/year). But 2 more years of postdoc + faculty job search uncertainty.
+
+Offer B: TCS to senior consultant/specialist in 3-5 years. After 5 years at TCS Quantum: Rs.25-40L/year. Potential to move to IBM Consulting or QC Ware at Rs.50-80L.
+
+Industry pays more at all career stages in India currently.
 
 (c) Non-monetary considerations: NQM postdoc offers publication record, academic freedom, long-term research depth, international conference exposure, and positions for eventual faculty role. TCS offers commercial exposure, client-facing skills, and faster skills breadth. Recommend: take TCS if financial stability is priority; take postdoc if research/academia is the long-term goal.
 
@@ -995,255 +880,224 @@ Note: Answers are collected at the end of this chapter.
 
 **1. Shor's algorithm threatens RSA encryption because it can factor N-bit integers in:**
 
-<div class="box box-equation">
-<p>(A) O(N^2) time classically, making RSA computationally feasible for large N</p>
-<p>(B) O(N^3) quantum gate operations, an exponential speedup over classical O(exp(N^{1/3})) algorithms</p>
-<p>(C) O(2^N) quantum operations, the same as a brute-force search</p>
-<p>(D) O(N log N) operations using the same principle as the Fast Fourier Transform</p>
-</div>
+(A) O(N^2) time classically, making RSA computationally feasible for large N
+
+(B) O(N^3) quantum gate operations, an exponential speedup over classical O(exp(N^{1/3})) algorithms
+
+(C) O(2^N) quantum operations, the same as a brute-force search
+
+(D) O(N log N) operations using the same principle as the Fast Fourier Transform
 
 **2. The "harvest-now-decrypt-later" attack on RSA-encrypted data is concerning TODAY because:**
 
-<div class="box box-equation">
-<p>(A) Current classical computers are already fast enough to break RSA-2048 given sufficient time</p>
-<p>(B) Adversaries intercept and store encrypted data now, planning to decrypt it when fault-tolerant quantum computers become available, meaning long-lived secrets are already at risk</p>
-<p>(C) Quantum computers have already broken RSA-1024 in laboratory conditions</p>
-<p>(D) RSA-2048 keys expire after 5 years, so all currently encrypted data will become vulnerable at key rotation time</p>
-</div>
+(A) Current classical computers are already fast enough to break RSA-2048 given sufficient time
+
+(B) Adversaries intercept and store encrypted data now, planning to decrypt it when fault-tolerant quantum computers become available, meaning long-lived secrets are already at risk
+
+(C) Quantum computers have already broken RSA-1024 in laboratory conditions
+
+(D) RSA-2048 keys expire after 5 years, so all currently encrypted data will become vulnerable at key rotation time
 
 **3. CRYSTALS-Kyber (FIPS 203) is selected as a NIST PQC standard for key encapsulation because:**
 
-<div class="box box-equation">
-<p>(A) It is based on the same lattice problem (LWE) as RSA, providing a smooth migration path</p>
-<p>(B) It is based on the Module Learning With Errors (M-LWE) lattice problem, which is believed hard for both classical and quantum computers, while providing efficient key generation and small ciphertext sizes</p>
-<p>(C) It relies solely on the security of SHA-3 hash functions, making it the most conservative choice</p>
-<p>(D) It achieves smaller key sizes than RSA-2048 while providing 256-bit classical security</p>
-</div>
+(A) It is based on the same lattice problem (LWE) as RSA, providing a smooth migration path
+
+(B) It is based on the Module Learning With Errors (M-LWE) lattice problem, which is believed hard for both classical and quantum computers, while providing efficient key generation and small ciphertext sizes
+
+(C) It relies solely on the security of SHA-3 hash functions, making it the most conservative choice
+
+(D) It achieves smaller key sizes than RSA-2048 while providing 256-bit classical security
 
 **4. India's National Quantum Mission (NQM) budget of Rs.6003 crore is distributed across four hubs. Which hub receives the LARGEST budget allocation?**
 
-<div class="box box-equation">
-<p>(A) QuCryptoS (Quantum Communications) at Rs.1800 crore, reflecting QKD deployment costs</p>
-<p>(B) QuST (Quantum Computing and Simulation) at Rs.1800 crore, reflecting the priority of building indigenous quantum computers</p>
-<p>(C) QuNAT (Quantum Sensing) at Rs.2000 crore, reflecting defence and navigation applications</p>
-<p>(D) QuMAT (Quantum Materials) at Rs.1800 crore, reflecting semiconductor fabrication requirements</p>
-</div>
+(A) QuCryptoS (Quantum Communications) at Rs.1800 crore, reflecting QKD deployment costs
+
+(B) QuST (Quantum Computing and Simulation) at Rs.1800 crore, reflecting the priority of building indigenous quantum computers
+
+(C) QuNAT (Quantum Sensing) at Rs.2000 crore, reflecting defence and navigation applications
+
+(D) QuMAT (Quantum Materials) at Rs.1800 crore, reflecting semiconductor fabrication requirements
 
 **5. In the Qiskit Developer Certification exam (60 questions, 90 minutes, 60% passing score), which topic area carries the HIGHEST weight?**
 
-<div class="box box-equation">
-<p>(A) Quantum Circuits at 30%, because writing circuits is the most fundamental Qiskit skill</p>
-<p>(B) Quantum Algorithms at 30%, because implementing Grover, QFT, QPE, VQE, and QAOA demonstrates both quantum understanding and Qiskit proficiency</p>
-<p>(C) Noise and Error Mitigation at 30%, because NISQ-era applications require noise awareness</p>
-<p>(D) Executing Circuits at 30%, because knowledge of IBM Quantum backends and job management is essential</p>
-</div>
+(A) Quantum Circuits at 30%, because writing circuits is the most fundamental Qiskit skill
+
+(B) Quantum Algorithms at 30%, because implementing Grover, QFT, QPE, VQE, and QAOA demonstrates both quantum understanding and Qiskit proficiency
+
+(C) Noise and Error Mitigation at 30%, because NISQ-era applications require noise awareness
+
+(D) Executing Circuits at 30%, because knowledge of IBM Quantum backends and job management is essential
 
 **6. A Quantum Hardware Engineer role primarily requires which combination of skills?**
 
-<div class="box box-equation">
-<p>(A) Python programming, financial modelling, and QAOA algorithm implementation</p>
-<p>(B) Qubit fabrication techniques, cryogenic systems engineering, microwave electronics, and device physics characterisation</p>
-<p>(C) Compiler design, graph algorithms, REST API development, and cloud platform integration</p>
-<p>(D) Quantum error correction codes, mathematical proof writing, and computational complexity theory</p>
-</div>
+(A) Python programming, financial modelling, and QAOA algorithm implementation
+
+(B) Qubit fabrication techniques, cryogenic systems engineering, microwave electronics, and device physics characterisation
+
+(C) Compiler design, graph algorithms, REST API development, and cloud platform integration
+
+(D) Quantum error correction codes, mathematical proof writing, and computational complexity theory
 
 **7. The IBM Quantum Network's commercial significance is that it:**
 
-<div class="box box-equation">
-<p>(A) Provides free unlimited quantum computing resources to all universities worldwide</p>
-<p>(B) Connects over 400 organisations including universities, national labs, and Fortune 500 companies with IBM Quantum hardware access, research collaboration, and co-development of quantum applications</p>
-<p>(C) Competes directly with AWS Braket and Azure Quantum by offering the lowest per-shot pricing</p>
-<p>(D) Restricts access to IBM Quantum hardware exclusively to IBM Research employees and NQM hub institutions</p>
-</div>
+(A) Provides free unlimited quantum computing resources to all universities worldwide
+
+(B) Connects over 400 organisations including universities, national labs, and Fortune 500 companies with IBM Quantum hardware access, research collaboration, and co-development of quantum applications
+
+(C) Competes directly with AWS Braket and Azure Quantum by offering the lowest per-shot pricing
+
+(D) Restricts access to IBM Quantum hardware exclusively to IBM Research employees and NQM hub institutions
 
 **8. The "utility era" in quantum computing (IBM 2023) is defined as:**
 
-<div class="box box-equation">
-<p>(A) The period when quantum computers achieve fault-tolerant operation with logical error rates below 10^{-6}</p>
-<p>(B) The period when quantum computers produce scientifically useful results beyond easy classical simulation, even before full fault-tolerance, enabled by error mitigation techniques</p>
-<p>(C) The period when quantum computing becomes commercially profitable for at least one Fortune 500 company</p>
-<p>(D) The period when NISQ devices achieve quantum volume above 10^6, enabling broad application deployment</p>
-</div>
+(A) The period when quantum computers achieve fault-tolerant operation with logical error rates below 10^{-6}
+
+(B) The period when quantum computers produce scientifically useful results beyond easy classical simulation, even before full fault-tolerance, enabled by error mitigation techniques
+
+(C) The period when quantum computing becomes commercially profitable for at least one Fortune 500 company
+
+(D) The period when NISQ devices achieve quantum volume above 10^6, enabling broad application deployment
 
 **9. SPHINCS+ (FIPS 205) is particularly well-suited for long-term archival applications because:**
 
-<div class="box box-equation">
-<p>(A) It has the smallest key sizes of all NIST PQC standards, minimising storage overhead</p>
-<p>(B) Its security relies only on the collision resistance of hash functions (SHA-3), requiring no lattice or code-based assumptions -- providing maximum long-term security assurance with minimal mathematical risk</p>
-<p>(C) It is a key encapsulation mechanism that provides perfect forward secrecy for archived data</p>
-<p>(D) It is stateful (unlike XMSS), making it easy to implement in systems that lack persistent state</p>
-</div>
+(A) It has the smallest key sizes of all NIST PQC standards, minimising storage overhead
+
+(B) Its security relies only on the collision resistance of hash functions (SHA-3), requiring no lattice or code-based assumptions -- providing maximum long-term security assurance with minimal mathematical risk
+
+(C) It is a key encapsulation mechanism that provides perfect forward secrecy for archived data
+
+(D) It is stateful (unlike XMSS), making it easy to implement in systems that lack persistent state
 
 **10. A "good first contribution" strategy for contributing to Qiskit on GitHub should start with:**
 
-<div class="box box-equation">
-<p>(A) Rewriting the core transpiler in Rust for performance improvement</p>
-<p>(B) Documentation improvements, fixing typos, improving code examples, or implementing a small feature tagged "good first issue" on GitHub</p>
-<p>(C) Forking the entire repository and creating a competing quantum SDK</p>
-<p>(D) Reporting theoretical bugs in the quantum error correction framework based on published papers</p>
-</div>
+(A) Rewriting the core transpiler in Rust for performance improvement
+
+(B) Documentation improvements, fixing typos, improving code examples, or implementing a small feature tagged "good first issue" on GitHub
+
+(C) Forking the entire repository and creating a competing quantum SDK
+
+(D) Reporting theoretical bugs in the quantum error correction framework based on published papers
 
 **11. CRYSTALS-Dilithium (FIPS 204) differs from CRYSTALS-Kyber (FIPS 203) in that:**
 
-<div class="box box-equation">
-<p>(A) Dilithium is a hash-based signature scheme while Kyber is a lattice-based key encapsulation mechanism</p>
-<p>(B) Dilithium is a digital signature algorithm for authentication and code signing, while Kyber is a key encapsulation mechanism for establishing session keys; both are lattice-based</p>
-<p>(C) Dilithium provides 512-bit quantum security while Kyber provides only 128-bit quantum security</p>
-<p>(D) Dilithium replaces symmetric encryption (AES) while Kyber replaces public-key encryption (RSA)</p>
-</div>
+(A) Dilithium is a hash-based signature scheme while Kyber is a lattice-based key encapsulation mechanism
+
+(B) Dilithium is a digital signature algorithm for authentication and code signing, while Kyber is a key encapsulation mechanism for establishing session keys; both are lattice-based
+
+(C) Dilithium provides 512-bit quantum security while Kyber provides only 128-bit quantum security
+
+(D) Dilithium replaces symmetric encryption (AES) while Kyber replaces public-key encryption (RSA)
 
 **12. In the NQM budget, the QuCryptoS hub (Quantum Communications) focuses primarily on:**
 
-<div class="box box-equation">
-<p>(A) Developing novel quantum error correction codes for superconducting qubit processors</p>
-<p>(B) QKD system development, QRNG device certification, post-quantum cryptography R&D, and the indigenous quantum satellite (Q-Sat)</p>
-<p>(C) Theoretical quantum information and quantum computing algorithm research</p>
-<p>(D) Quantum materials and superconducting qubit fabrication for the indigenous quantum computer</p>
-</div>
+(A) Developing novel quantum error correction codes for superconducting qubit processors
+
+(B) QKD system development, QRNG device certification, post-quantum cryptography R&D, and the indigenous quantum satellite (Q-Sat)
+
+(C) Theoretical quantum information and quantum computing algorithm research
+
+(D) Quantum materials and superconducting qubit fabrication for the indigenous quantum computer
 
 **13. For a Quantum Applications Scientist role at a quantum finance startup, the most valuable differentiating qualification (beyond the degree) is:**
 
-<div class="box box-equation">
-<p>(A) A Ph.D. in hardware physics with clean-room experience</p>
-<p>(B) Combined Qiskit Developer Certification plus domain expertise (e.g., CFA or relevant quantitative finance knowledge) plus demonstrated QAOA/QAE implementations in a GitHub portfolio</p>
-<p>(C) A compiled language programming background (C++/Rust) for performance-critical circuit simulation</p>
-<p>(D) A pure mathematics Ph.D. with focus on number theory and cryptographic hardness proofs</p>
-</div>
+(A) A Ph.D. in hardware physics with clean-room experience
+
+(B) Combined Qiskit Developer Certification plus domain expertise (e.g., CFA or relevant quantitative finance knowledge) plus demonstrated QAOA/QAE implementations in a GitHub portfolio
+
+(C) A compiled language programming background (C++/Rust) for performance-critical circuit simulation
+
+(D) A pure mathematics Ph.D. with focus on number theory and cryptographic hardness proofs
 
 **14. The NIST PQC competition selected lattice-based algorithms (Kyber, Dilithium, FALCON) as the primary standards because:**
 
-<div class="box box-equation">
-<p>(A) Lattice problems are proven NP-hard, providing information-theoretic security guarantees</p>
-<p>(B) Lattice problems (LWE, NTRU) have resisted decades of classical and quantum cryptanalysis, offer the best balance of key/signature sizes and computational efficiency, and benefit from rich mathematical theory</p>
-<p>(C) Lattice-based algorithms can be implemented using the same hardware as RSA, minimising migration costs</p>
-<p>(D) NIST exclusively selected lattice algorithms and rejected all hash-based and code-based candidates</p>
-</div>
+(A) Lattice problems are proven NP-hard, providing information-theoretic security guarantees
+
+(B) Lattice problems (LWE, NTRU) have resisted decades of classical and quantum cryptanalysis, offer the best balance of key/signature sizes and computational efficiency, and benefit from rich mathematical theory
+
+(C) Lattice-based algorithms can be implemented using the same hardware as RSA, minimising migration costs
+
+(D) NIST exclusively selected lattice algorithms and rejected all hash-based and code-based candidates
 
 **15. A quantum computing roadmap predicts 100 logical qubits will be achievable by 2030. The significance for quantum chemistry is that:**
 
-<div class="box box-equation">
-<p>(A) 100 logical qubits can simulate any molecule on Earth exactly via Quantum Phase Estimation</p>
-<p>(B) 100 logical qubits would allow fault-tolerant QPE for medium-sized drug molecules (20-50 orbital active spaces) that are beyond CCSD(T) but too small for full pharmaceutical relevance -- an important stepping stone</p>
-<p>(C) 100 logical qubits is sufficient to break RSA-2048 using Shor's algorithm</p>
-<p>(D) 100 logical qubits can only simulate H2 and LiH, the same as current NISQ VQE approaches</p>
-</div>
+(A) 100 logical qubits can simulate any molecule on Earth exactly via Quantum Phase Estimation
+
+(B) 100 logical qubits would allow fault-tolerant QPE for medium-sized drug molecules (20-50 orbital active spaces) that are beyond CCSD(T) but too small for full pharmaceutical relevance -- an important stepping stone
+
+(C) 100 logical qubits is sufficient to break RSA-2048 using Shor's algorithm
+
+(D) 100 logical qubits can only simulate H2 and LiH, the same as current NISQ VQE approaches
 
 ## MCQ Answers — Chapter 10
 
-<table>
-<thead><tr>
-<th><strong>Q1</strong></th>
-<th><strong>B</strong></th>
-<th><strong>Q2</strong></th>
-<th><strong>B</strong></th>
-<th><strong>Q3</strong></th>
-<th><strong>B</strong></th>
-<th><strong>Q4</strong></th>
-<th><strong>B</strong></th>
-<th><strong>Q5</strong></th>
-<th><strong>B</strong></th>
-</tr></thead>
-<tbody>
-<tr>
-<td><strong>Q6</strong></td>
-<td><strong>B</strong></td>
-<td><strong>Q7</strong></td>
-<td><strong>B</strong></td>
-<td><strong>Q8</strong></td>
-<td><strong>B</strong></td>
-<td><strong>Q9</strong></td>
-<td><strong>B</strong></td>
-<td><strong>Q10</strong></td>
-<td><strong>B</strong></td>
-</tr>
-<tr>
-<td><strong>Q11</strong></td>
-<td><strong>B</strong></td>
-<td><strong>Q12</strong></td>
-<td><strong>B</strong></td>
-<td><strong>Q13</strong></td>
-<td><strong>B</strong></td>
-<td><strong>Q14</strong></td>
-<td><strong>B</strong></td>
-<td><strong>Q15</strong></td>
-<td><strong>B</strong></td>
-</tr>
-</tbody></table>
+| Q1 | B | Q2 | B | Q3 | B | Q4 | B | Q5 | B |
+|---|---|---|---|---|---|---|---|---|---|
+| Q6 | B | Q7 | B | Q8 | B | Q9 | B | Q10 | B |
+| Q11 | B | Q12 | B | Q13 | B | Q14 | B | Q15 | B |
 
 ## Unsolved Problems — Chapter 10
 
-10.1 The global PQC market was $1.5B in 2024. (a) At 55% CAGR, calculate the 2025, 2027, and 2030 market values. (b) Compare the 2030 PQC market with the 2030 hardware market ($14.5B projected). (c) Explain economically why PQC grows faster than quantum hardware.
+10.1  The global PQC market was $1.5B in 2024. (a) At 55% CAGR, calculate the 2025, 2027, and 2030 market values. (b) Compare the 2030 PQC market with the 2030 hardware market ($14.5B projected). (c) Explain economically why PQC grows faster than quantum hardware.
 
-<div class="box box-equation">
-<p>[Ans: (a) 2025: $1.5x1.55=$2.33B; 2027: $1.5x1.55^3=$5.58B; 2030: $1.5x1.55^6=$31.9B. (b) PQC 2030 ($31.9B) >> Hardware 2030 ($14.5B); PQC is 2.2x the hardware market by 2030. (c) PQC addresses ALL encrypted systems (billions of devices); hardware addresses only QC adopters; PQC is regulatory-mandated while hardware is discretionary investment.]</p>
-</div>
+[Ans: (a) 2025: $1.5x1.55=$2.33B; 2027: $1.5x1.55^3=$5.58B; 2030: $1.5x1.55^6=$31.9B. (b) PQC 2030 ($31.9B) >> Hardware 2030 ($14.5B); PQC is 2.2x the hardware market by 2030. (c) PQC addresses ALL encrypted systems (billions of devices); hardware addresses only QC adopters; PQC is regulatory-mandated while hardware is discretionary investment.]
 
-10.2 Shor's algorithm requires approximately n^3 quantum operations for n-bit RSA. (a) How many gates for RSA-512? RSA-1024? RSA-4096? (b) If fault-tolerant gates cost $0.001 per gate-second (hypothetical), what is the cost to break RSA-2048 at 10^10 gates x 1 microsecond/gate? (c) Why does this economic analysis suggest nation-state actors are the primary Q-Day threat?
+10.2  Shor's algorithm requires approximately n^3 quantum operations for n-bit RSA. (a) How many gates for RSA-512? RSA-1024? RSA-4096? (b) If fault-tolerant gates cost $0.001 per gate-second (hypothetical), what is the cost to break RSA-2048 at 10^10 gates x 1 microsecond/gate? (c) Why does this economic analysis suggest nation-state actors are the primary Q-Day threat?
 
-<div class="box box-equation">
-<p>[Ans: (a) RSA-512: 512^3=1.34x10^8; RSA-1024: 1.07x10^9; RSA-4096: 6.87x10^10 gates. (b) Cost = 10^10 x 10^{-6} s x $0.001/gate-s = $10. At fault-tolerant scale RSA breaking will be essentially free, making cryptographic migration urgently necessary. (c) Initial quantum computers will be expensive (billions USD to build); only nation-states with strategic intelligence motives can justify this cost; later, costs drop.]</p>
-</div>
+[Ans: (a) RSA-512: 512^3=1.34x10^8; RSA-1024: 1.07x10^9; RSA-4096: 6.87x10^10 gates. (b) Cost = 10^10 x 10^{-6} s x $0.001/gate-s = $10. At fault-tolerant scale RSA breaking will be essentially free, making cryptographic migration urgently necessary. (c) Initial quantum computers will be expensive (billions USD to build); only nation-states with strategic intelligence motives can justify this cost; later, costs drop.]
 
-10.3 NQM QuST hub has Rs.1800 crore over 8 years. (a) Annual budget in USD. (b) Estimate the cost of one 50-qubit superconducting quantum processor (including dilution refrigerator, electronics, infrastructure) at approximately $3M per system. How many complete systems can QuST fund? (c) Compare with IBM's quantum R&D spending (~$1.5B/year reported). What does this imply?
+10.3  NQM QuST hub has Rs.1800 crore over 8 years. (a) Annual budget in USD. (b) Estimate the cost of one 50-qubit superconducting quantum processor (including dilution refrigerator, electronics, infrastructure) at approximately $3M per system. How many complete systems can QuST fund? (c) Compare with IBM's quantum R&D spending (~$1.5B/year reported). What does this imply?
 
-<div class="box box-equation">
-<p>[Ans: (a) Rs.1800Cr/8 = Rs.225Cr/year = $27M/year. (b) $27M/$3M per system = 9 complete systems per year in principle (unrealistic -- must also fund salaries, consumables, facilities, software). Realistic: 2-3 systems plus extensive personnel and operations. (c) IBM spends $1.5B/year vs QuST $27M: IBM is 55x larger. India needs strategic focus on differentiating areas (applications, algorithms, materials) rather than competing on hardware count.]</p>
-</div>
+[Ans: (a) Rs.1800Cr/8 = Rs.225Cr/year = $27M/year. (b) $27M/$3M per system = 9 complete systems per year in principle (unrealistic -- must also fund salaries, consumables, facilities, software). Realistic: 2-3 systems plus extensive personnel and operations. (c) IBM spends $1.5B/year vs QuST $27M: IBM is 55x larger. India needs strategic focus on differentiating areas (applications, algorithms, materials) rather than competing on hardware count.]
 
-10.4 A student passes the Qiskit Developer exam with score 72/100. (a) What is the pass/fail outcome? (b) The exam has 5 topic areas with weights 20/20/15/30/15%. If the student scored 90% on Algorithms (30%), 60% on Circuits (20%), 50% on Executing (20%), 70% on Quantum Info (15%), and 80% on Noise (15%), verify the total score. (c) What should the student study to improve to 80%+ overall?
+10.4  A student passes the Qiskit Developer exam with score 72/100. (a) What is the pass/fail outcome? (b) The exam has 5 topic areas with weights 20/20/15/30/15%. If the student scored 90% on Algorithms (30%), 60% on Circuits (20%), 50% on Executing (20%), 70% on Quantum Info (15%), and 80% on Noise (15%), verify the total score. (c) What should the student study to improve to 80%+ overall?
 
-<div class="box box-equation">
-<p>[Ans: (a) Pass threshold = 60% = 36/60 questions. 72/100 = 43.2/60 equivalent. Pass. (b) Weighted score = 0.20x60 + 0.20x50 + 0.15x70 + 0.30x90 + 0.15x80 = 12 + 10 + 10.5 + 27 + 12 = 71.5% = 71.5/100. (c) To reach 80%: Executing Circuits (currently 50%) needs most improvement -- study transpilation, Aer backends, Sampler/Estimator primitives. Circuits (60%) also needs work -- more circuit composition practice.]</p>
-</div>
+[Ans: (a) Pass threshold = 60% = 36/60 questions. 72/100 = 43.2/60 equivalent. Pass. (b) Weighted score = 0.20x60 + 0.20x50 + 0.15x70 + 0.30x90 + 0.15x80 = 12 + 10 + 10.5 + 27 + 12 = 71.5% = 71.5/100. (c) To reach 80%: Executing Circuits (currently 50%) needs most improvement -- study transpilation, Aer backends, Sampler/Estimator primitives. Circuits (60%) also needs work -- more circuit composition practice.]
 
-10.5 A student has 200 GitHub repository stars across 8 projects. (a) What is the average stars per project? (b) If one VQE project has 150 stars, what is the average of the remaining 7 projects? (c) GitHub analytics show 85% of views come from the VQE project. Why does this support a "fewer high-quality projects" strategy over a "many mediocre projects" strategy?
+10.5  A student has 200 GitHub repository stars across 8 projects. (a) What is the average stars per project? (b) If one VQE project has 150 stars, what is the average of the remaining 7 projects? (c) GitHub analytics show 85% of views come from the VQE project. Why does this support a "fewer high-quality projects" strategy over a "many mediocre projects" strategy?
 
-<div class="box box-equation">
-<p>[Ans: (a) 200/8 = 25 stars average per project. (b) (200-150)/7 = 7.1 stars average for others. (c) Power-law attention distribution: 85% of value from 1 high-quality project (75% of stars). Employers review top-1 or top-2 repositories; breadth below 3 good projects adds little value. Quality >> quantity for portfolio ROI.]</p>
-</div>
+[Ans: (a) 200/8 = 25 stars average per project. (b) (200-150)/7 = 7.1 stars average for others. (c) Power-law attention distribution: 85% of value from 1 high-quality project (75% of stars). Employers review top-1 or top-2 repositories; breadth below 3 good projects adds little value. Quality >> quantity for portfolio ROI.]
 
-10.6 IBM Heron processor has 133 qubits and 2Q gate fidelity 99.9%. (a) What is the 1-qubit gate error rate (typically 10x better than 2Q fidelity)? (b) For a VQE circuit with 50 qubits, 200 two-qubit gates, and 400 single-qubit gates, what is the raw circuit fidelity without error mitigation? (c) With ZNE reducing effective error by 5x, what is the corrected observable fidelity?
+10.6  IBM Heron processor has 133 qubits and 2Q gate fidelity 99.9%. (a) What is the 1-qubit gate error rate (typically 10x better than 2Q fidelity)? (b) For a VQE circuit with 50 qubits, 200 two-qubit gates, and 400 single-qubit gates, what is the raw circuit fidelity without error mitigation? (c) With ZNE reducing effective error by 5x, what is the corrected observable fidelity?
 
-<div class="box box-equation">
-<p>[Ans: (a) 1Q error = 0.1%/10 = 0.01% = 10^{-4}. (b) Raw fidelity = (1-0.001)^{200} x (1-0.0001)^{400} = 0.819 x 0.961 = 0.787. (c) ZNE reduces error rate by 5x: effective 2Q error = 0.002%; 1Q error = 0.002%. ZNE fidelity = (0.9998)^{200} x (0.99998)^{400} = 0.961 x 0.992 = 0.954.]</p>
-</div>
+[Ans: (a) 1Q error = 0.1%/10 = 0.01% = 10^{-4}. (b) Raw fidelity = (1-0.001)^{200} x (1-0.0001)^{400} = 0.819 x 0.961 = 0.787. (c) ZNE reduces error rate by 5x: effective 2Q error = 0.002%; 1Q error = 0.002%. ZNE fidelity = (0.9998)^{200} x (0.99998)^{400} = 0.961 x 0.992 = 0.954.]
 
-10.7 Kyber-768 has a public key of 1184 bytes. Compare with RSA-2048 (256 bytes). (a) Extra data per HTTPS connection handshake (one public key exchange). (b) A web server handles 10,000 HTTPS connections per second. Extra bandwidth per second for PQC migration. (c) At 1 Gbps uplink bandwidth, what percentage of bandwidth is consumed by this extra PQC data?
+10.7  Kyber-768 has a public key of 1184 bytes. Compare with RSA-2048 (256 bytes). (a) Extra data per HTTPS connection handshake (one public key exchange). (b) A web server handles 10,000 HTTPS connections per second. Extra bandwidth per second for PQC migration. (c) At 1 Gbps uplink bandwidth, what percentage of bandwidth is consumed by this extra PQC data?
 
-<div class="box box-equation">
-<p>[Ans: (a) Extra per handshake = 1184 - 256 = 928 bytes. (b) Extra per second = 928 bytes x 10,000 = 9.28 MB/s. (c) 9.28 MB/s = 74.2 Mbps. Percentage = 74.2/1000 = 7.4%. Non-trivial for high-traffic servers but manageable with bandwidth upgrades. For most servers: negligible.]</p>
-</div>
+[Ans: (a) Extra per handshake = 1184 - 256 = 928 bytes. (b) Extra per second = 928 bytes x 10,000 = 9.28 MB/s. (c) 9.28 MB/s = 74.2 Mbps. Percentage = 74.2/1000 = 7.4%. Non-trivial for high-traffic servers but manageable with bandwidth upgrades. For most servers: negligible.]
 
-10.8 The QHack hackathon is a 72-hour quantum computing challenge. (a) If a team of 3 students has 72 hours total, what is the effective person-hours? (b) QAOA for MaxCut on N=15 nodes requires a 15-qubit circuit with O(p*E) gates where E=30 edges and p=2. How many 2-qubit gates? (c) If the team uses IBM Quantum with 10 minutes of free compute at 900,000 shots/second, and each circuit run needs 1024 shots, how many distinct circuits can they test?
+10.8  The QHack hackathon is a 72-hour quantum computing challenge. (a) If a team of 3 students has 72 hours total, what is the effective person-hours? (b) QAOA for MaxCut on N=15 nodes requires a 15-qubit circuit with O(p\*E) gates where E=30 edges and p=2. How many 2-qubit gates? (c) If the team uses IBM Quantum with 10 minutes of free compute at 900,000 shots/second, and each circuit run needs 1024 shots, how many distinct circuits can they test?
 
-<div class="box box-equation">
-<p>[Ans: (a) 72 hours x 3 people = 216 person-hours. (b) Cost layer: E=30 ZZ gates per layer x p=2 = 60 ZZ gates = 60 two-qubit gates for the cost unitaries. Mixer: 15 Rx gates per layer x p=2 = 30 single-qubit gates. Total 2Q gates = 60. (c) Total shots = 10 min x 60 s/min x 900,000 shots/s = 540,000,000 shots. Circuits = 540,000,000 / 1024 shots/circuit = 527,344 circuits. Sufficient for hyperparameter search.]</p>
-</div>
+[Ans: (a) 72 hours x 3 people = 216 person-hours. (b) Cost layer: E=30 ZZ gates per layer x p=2 = 60 ZZ gates = 60 two-qubit gates for the cost unitaries. Mixer: 15 Rx gates per layer x p=2 = 30 single-qubit gates. Total 2Q gates = 60. (c) Total shots = 10 min x 60 s/min x 900,000 shots/s = 540,000,000 shots. Circuits = 540,000,000 / 1024 shots/circuit = 527,344 circuits. Sufficient for hyperparameter search.]
 
-10.9 India plans a 2000 km Delhi-Bangalore quantum-secured fibre network under NQM. (a) At fibre attenuation 0.2 dB/km, what is the total link loss? (b) At 0.2 dB/km, the maximum QKD distance without repeaters is ~200 km. How many trusted relay nodes are needed for 2000 km? (c) If each relay station costs Rs.5 crore (infrastructure + QKD systems), what is the relay station capital cost?
+10.9  India plans a 2000 km Delhi-Bangalore quantum-secured fibre network under NQM. (a) At fibre attenuation 0.2 dB/km, what is the total link loss? (b) At 0.2 dB/km, the maximum QKD distance without repeaters is ~200 km. How many trusted relay nodes are needed for 2000 km? (c) If each relay station costs Rs.5 crore (infrastructure + QKD systems), what is the relay station capital cost?
 
-<div class="box box-equation">
-<p>[Ans: (a) Total loss = 0.2 x 2000 = 400 dB -- completely opaque without repeaters. (b) Segments = 2000/200 = 10 segments; relay nodes = 10 - 1 = 9 relay nodes needed. (c) Capital cost = 9 nodes x Rs.5 crore = Rs.45 crore. Within the QuCryptoS Rs.1440 crore budget, relay infrastructure is a small fraction.]</p>
-</div>
+[Ans: (a) Total loss = 0.2 x 2000 = 400 dB -- completely opaque without repeaters. (b) Segments = 2000/200 = 10 segments; relay nodes = 10 - 1 = 9 relay nodes needed. (c) Capital cost = 9 nodes x Rs.5 crore = Rs.45 crore. Within the QuCryptoS Rs.1440 crore budget, relay infrastructure is a small fraction.]
 
-10.10 Compare career trajectories for two quantum computing professionals after 10 years: (A) Academic-track (B.Tech + Ph.D. 5yr + Postdoc 2yr = 7 years, then faculty position at IIT); (B) Industry-track (B.Tech + M.Sc. 2yr + TCS Quantum 8yr, reaching Principal Consultant). (a) Estimate year-10 salary (INR) for each. (b) Estimate total lifetime earnings to age 40 from the start of their career for each. (c) Identify two non-monetary advantages of each track.
+10.10  Compare career trajectories for two quantum computing professionals after 10 years: (A) Academic-track (B.Tech + Ph.D. 5yr + Postdoc 2yr = 7 years, then faculty position at IIT); (B) Industry-track (B.Tech + M.Sc. 2yr + TCS Quantum 8yr, reaching Principal Consultant). (a) Estimate year-10 salary (INR) for each. (b) Estimate total lifetime earnings to age 40 from the start of their career for each. (c) Identify two non-monetary advantages of each track.
 
-<div class="box box-equation">
-<p>[Ans: (a) Academic (year 10 = faculty IIT): Rs.1.5-2L/month = Rs.18-24L/year. Industry (year 10 = Principal Consultant): Rs.80L-1.5Cr/year. Industry wins on salary by 4-6x at year 10. (b) Academic: postdoc Rs.70K/month x 24 months + faculty rising from Rs.75K to Rs.1.5L = cumulative ~Rs.1.2-1.5Cr at year 10. Industry: TCS rising from Rs.12L to Rs.80L over 8 years, cumulative ~Rs.3-4Cr. (c) Academic advantages: intellectual freedom, publication record, global reputation, sabbaticals. Industry advantages: salary, commercial impact, team scale, product ownership.]</p>
-</div>
+[Ans: (a) Academic (year 10 = faculty IIT): Rs.1.5-2L/month = Rs.18-24L/year. Industry (year 10 = Principal Consultant): Rs.80L-1.5Cr/year. Industry wins on salary by 4-6x at year 10. (b) Academic: postdoc Rs.70K/month x 24 months + faculty rising from Rs.75K to Rs.1.5L = cumulative ~Rs.1.2-1.5Cr at year 10. Industry: TCS rising from Rs.12L to Rs.80L over 8 years, cumulative ~Rs.3-4Cr. (c) Academic advantages: intellectual freedom, publication record, global reputation, sabbaticals. Industry advantages: salary, commercial impact, team scale, product ownership.]
 
 ## Theory Questions — Chapter 10
 
-1. 1. Explain Shor's algorithm at a high level: what mathematical problem does it solve, what is its quantum complexity class, and why does it threaten RSA, ECC, and Diffie-Hellman simultaneously? Calculate precisely how many logical qubits are needed to run Shor's algorithm against RSA-2048 at chemical precision using the best known quantum circuit constructions.
-2. 2. Describe the harvest-now-decrypt-later threat model. What types of data are most at risk? Why does the 10-20 year Q-Day estimate NOT mean we have 10-20 years to address the threat? Design a risk prioritisation framework that a CTO could use to rank which systems to migrate to PQC first.
-3. 3. Compare CRYSTALS-Kyber (FIPS 203), CRYSTALS-Dilithium (FIPS 204), and SPHINCS+ (FIPS 205) in terms of: (a) mathematical hardness assumption; (b) key and signature sizes; (c) primary use cases; (d) implementation challenges. For each, explain what attack would break the scheme and why that attack is believed to be hard for quantum computers.
-4. 4. Describe the structure of India's National Quantum Mission: governance, four hubs, budget allocation, and 2031 targets. Compare the NQM quantum computing targets (50-1000 qubit processors) with IBM's current capabilities (1121 qubits, Heron). What are the three most critical technical milestones India must achieve to realise the QuST hub goals?
-5. 5. Compare four quantum career pathways (Hardware Engineer, Algorithm Researcher, Software Developer, Applications Scientist) using a structured analysis covering: required educational background, daily job responsibilities, key technical skills, typical employers (India and global), salary trajectory from entry to senior, and long-term career ceiling. Which pathway has the best prospects in India by 2030 and why?
-6. 6. Explain the Qiskit ecosystem layer structure (Terra, Aer, domain libraries, Runtime, Pulse). For each layer, describe: what it does, what Python classes/functions are most important to know for the Qiskit certification exam, and one practical task you would use that layer for. Then design a VQE experiment for H2 specifying which Qiskit layers and specific functions you would use at each step.
-7. 7. Design a 6-month quantum GitHub portfolio strategy for a final-year M.Sc. Physics student aiming for a Quantum Applications Scientist role at a quantum finance startup. Specify: (a) exactly 5 projects with physics motivation, Qiskit implementation plan, and expected deliverables; (b) estimated time allocation per project; (c) community engagement plan (conferences, Slack, open-source contributions); (d) how to write the project README to maximise employer appeal.
-8. 8. Evaluate the quantum technology readiness of three sectors in India for 2024-2028: (a) banking and financial services (QKD migration, PQC mandate, quantum risk modelling); (b) defence and aerospace (quantum sensing, secure comms, quantum-enhanced navigation); (c) pharmaceuticals (quantum chemistry for drug discovery). For each sector, assess the timeline to commercial quantum adoption, key Indian institutions involved, and one specific quantum application that could be demonstrated within 5 years.
-9. 9. Analyse the competitive landscape for quantum computing globally. Compare China, USA, EU, and India on: (a) government investment; (b) number of leading quantum hardware companies; (c) quantum workforce (Ph.D. graduates per year in quantum-related fields); (d) quantum patent filings. What are India's comparative advantages and disadvantages? What strategy would you recommend for the NQM to maximise India's competitive position?
-10. 10. Critically evaluate the claim that the quantum computing industry will undergo 'quantum winter' (period of reduced investment and interest) before delivering commercial value. Argue both for and against this possibility, citing: (a) the history of AI winters and AI spring as an analogy; (b) current investment levels and funding trajectory; (c) quantum utility result 2023 as evidence for or against winter; (d) PQC mandate as a quantum-proof revenue source regardless of QC timelines.
+- 1.  Explain Shor's algorithm at a high level: what mathematical problem does it solve, what is its quantum complexity class, and why does it threaten RSA, ECC, and Diffie-Hellman simultaneously? Calculate precisely how many logical qubits are needed to run Shor's algorithm against RSA-2048 at chemical precision using the best known quantum circuit constructions.
+
+- 2.  Describe the harvest-now-decrypt-later threat model. What types of data are most at risk? Why does the 10-20 year Q-Day estimate NOT mean we have 10-20 years to address the threat? Design a risk prioritisation framework that a CTO could use to rank which systems to migrate to PQC first.
+
+- 3.  Compare CRYSTALS-Kyber (FIPS 203), CRYSTALS-Dilithium (FIPS 204), and SPHINCS+ (FIPS 205) in terms of: (a) mathematical hardness assumption; (b) key and signature sizes; (c) primary use cases; (d) implementation challenges. For each, explain what attack would break the scheme and why that attack is believed to be hard for quantum computers.
+
+- 4.  Describe the structure of India's National Quantum Mission: governance, four hubs, budget allocation, and 2031 targets. Compare the NQM quantum computing targets (50-1000 qubit processors) with IBM's current capabilities (1121 qubits, Heron). What are the three most critical technical milestones India must achieve to realise the QuST hub goals?
+
+- 5.  Compare four quantum career pathways (Hardware Engineer, Algorithm Researcher, Software Developer, Applications Scientist) using a structured analysis covering: required educational background, daily job responsibilities, key technical skills, typical employers (India and global), salary trajectory from entry to senior, and long-term career ceiling. Which pathway has the best prospects in India by 2030 and why?
+
+- 6.  Explain the Qiskit ecosystem layer structure (Terra, Aer, domain libraries, Runtime, Pulse). For each layer, describe: what it does, what Python classes/functions are most important to know for the Qiskit certification exam, and one practical task you would use that layer for. Then design a VQE experiment for H2 specifying which Qiskit layers and specific functions you would use at each step.
+
+- 7.  Design a 6-month quantum GitHub portfolio strategy for a final-year M.Sc. Physics student aiming for a Quantum Applications Scientist role at a quantum finance startup. Specify: (a) exactly 5 projects with physics motivation, Qiskit implementation plan, and expected deliverables; (b) estimated time allocation per project; (c) community engagement plan (conferences, Slack, open-source contributions); (d) how to write the project README to maximise employer appeal.
+
+- 8.  Evaluate the quantum technology readiness of three sectors in India for 2024-2028: (a) banking and financial services (QKD migration, PQC mandate, quantum risk modelling); (b) defence and aerospace (quantum sensing, secure comms, quantum-enhanced navigation); (c) pharmaceuticals (quantum chemistry for drug discovery). For each sector, assess the timeline to commercial quantum adoption, key Indian institutions involved, and one specific quantum application that could be demonstrated within 5 years.
+
+- 9.  Analyse the competitive landscape for quantum computing globally. Compare China, USA, EU, and India on: (a) government investment; (b) number of leading quantum hardware companies; (c) quantum workforce (Ph.D. graduates per year in quantum-related fields); (d) quantum patent filings. What are India's comparative advantages and disadvantages? What strategy would you recommend for the NQM to maximise India's competitive position?
+
+- 10.  Critically evaluate the claim that the quantum computing industry will undergo 'quantum winter' (period of reduced investment and interest) before delivering commercial value. Argue both for and against this possibility, citing: (a) the history of AI winters and AI spring as an analogy; (b) current investment levels and funding trajectory; (c) quantum utility result 2023 as evidence for or against winter; (d) PQC mandate as a quantum-proof revenue source regardless of QC timelines.
 
 ## Assignments — Chapter 10
 
@@ -1261,23 +1115,42 @@ Write a 2500-word policy analysis of India's National Quantum Mission: (a) Compa
 
 ## References and Further Reading
 
-1. 1. McKinsey & Company (2021). Quantum technology: See who is preparing now. McKinsey Digital. https://www.mckinsey.com/quantum
-2. 2. Boston Consulting Group (2022). The coming quantum leap in computing. BCG Henderson Institute.
-3. 3. IDC (2023). Worldwide Quantum Computing Forecast 2023-2027. International Data Corporation.
-4. 4. NIST (2024). Post-Quantum Cryptography Standards. FIPS 203, 204, 205. https://csrc.nist.gov/pqcrypto
-5. 5. Banegas, G. et al. (2021). Concrete quantum cryptanalysis of binary elliptic curves. IACR Transactions on Cryptographic Hardware and Embedded Systems.
-6. 6. National Security Agency (2022). Commercial National Security Algorithm Suite 2.0. NSA Cybersecurity Advisory.
-7. 7. Ministry of Science & Technology, Government of India (2023). National Quantum Mission: Approved by Union Cabinet, April 2023. DST Press Release.
-8. 8. Department of Science & Technology (2023). NQM Implementation Framework and Hub Structure. DST Technical Report.
-9. 9. IBM Quantum (2024). IBM Quantum Development Roadmap 2024-2033. IBM Research Blog.
-10. 10. Google Quantum AI (2024). Quantum error correction below the surface code threshold. Nature, December 2024.
-11. 11. Kim, Y. et al. (2023). Evidence for the utility of quantum computing before fault tolerance. Nature, 618, 500-505.
-12. 12. IonQ (2024). IonQ Forte Enterprise: 35 algorithmic qubits with QV > 4,000,000. IonQ Technical Specification Sheet.
-13. 13. Quantinuum (2023). H2 quantum processor: 56 qubits, 99.9% two-qubit gate fidelity. Quantinuum Technical Briefing.
-14. 14. QuEra (2023). Logical quantum processor based on reconfigurable atom arrays. Nature, 626, 58-65.
-15. 15. Gidney, C., & Ekera, M. (2021). How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits. Quantum, 5, 433.
-16. 16. Cloudflare (2023). Cloudflare and CRYSTALS-Kyber: Post-quantum key agreement in TLS 1.3. Cloudflare Blog.
-17. 17. CERT-In (2023). Guidelines on Quantum-Safe Cryptography for Indian Organisations. CERT-In Advisory 2023-40.
-18. 18. Qiskit Community (2024). Qiskit Developer Certification Exam Guide. IBM Quantum Learning Platform.
-19. 19. Deutsch, D., & Jozsa, R. (1992). Rapid solution of problems by quantum computation. Proceedings of the Royal Society A, 439(1907), 553-558.
-20. 20. QHack (2024). Annual Quantum Computing Hackathon. Xanadu. https://qhack.ai
+- 1.  McKinsey & Company (2021). Quantum technology: See who is preparing now. McKinsey Digital. https://www.mckinsey.com/quantum
+
+- 2.  Boston Consulting Group (2022). The coming quantum leap in computing. BCG Henderson Institute.
+
+- 3.  IDC (2023). Worldwide Quantum Computing Forecast 2023-2027. International Data Corporation.
+
+- 4.  NIST (2024). Post-Quantum Cryptography Standards. FIPS 203, 204, 205. https://csrc.nist.gov/pqcrypto
+
+- 5.  Banegas, G. et al. (2021). Concrete quantum cryptanalysis of binary elliptic curves. IACR Transactions on Cryptographic Hardware and Embedded Systems.
+
+- 6.  National Security Agency (2022). Commercial National Security Algorithm Suite 2.0. NSA Cybersecurity Advisory.
+
+- 7.  Ministry of Science & Technology, Government of India (2023). National Quantum Mission: Approved by Union Cabinet, April 2023. DST Press Release.
+
+- 8.  Department of Science & Technology (2023). NQM Implementation Framework and Hub Structure. DST Technical Report.
+
+- 9.  IBM Quantum (2024). IBM Quantum Development Roadmap 2024-2033. IBM Research Blog.
+
+- 10. Google Quantum AI (2024). Quantum error correction below the surface code threshold. Nature, December 2024.
+
+- 11. Kim, Y. et al. (2023). Evidence for the utility of quantum computing before fault tolerance. Nature, 618, 500-505.
+
+- 12. IonQ (2024). IonQ Forte Enterprise: 35 algorithmic qubits with QV > 4,000,000. IonQ Technical Specification Sheet.
+
+- 13. Quantinuum (2023). H2 quantum processor: 56 qubits, 99.9% two-qubit gate fidelity. Quantinuum Technical Briefing.
+
+- 14. QuEra (2023). Logical quantum processor based on reconfigurable atom arrays. Nature, 626, 58-65.
+
+- 15. Gidney, C., & Ekera, M. (2021). How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits. Quantum, 5, 433.
+
+- 16. Cloudflare (2023). Cloudflare and CRYSTALS-Kyber: Post-quantum key agreement in TLS 1.3. Cloudflare Blog.
+
+- 17. CERT-In (2023). Guidelines on Quantum-Safe Cryptography for Indian Organisations. CERT-In Advisory 2023-40.
+
+- 18. Qiskit Community (2024). Qiskit Developer Certification Exam Guide. IBM Quantum Learning Platform.
+
+- 19. Deutsch, D., & Jozsa, R. (1992). Rapid solution of problems by quantum computation. Proceedings of the Royal Society A, 439(1907), 553-558.
+
+- 20. QHack (2024). Annual Quantum Computing Hackathon. Xanadu. https://qhack.ai

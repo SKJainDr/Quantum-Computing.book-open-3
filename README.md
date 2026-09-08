@@ -1,82 +1,66 @@
 # Quantum Hardware, Error Correction & Applications — Online Reader
 
-A self-contained GitHub Pages site for **Quantum Hardware, Error Correction & Applications: Physical Qubits, Noise Mitigation & Quantum Computing Ecosystem** (Q.C. Series, Vol. III) by Dr. S. K. Jain.
+A self-contained GitHub Pages site for **Quantum Hardware, Error Correction & Applications: Physical Qubits, Noise Mitigation & Quantum Computing** (Q.C. Series, Vol. III) by Dr. S. K. Jain.
 
-This is **Volume III** of the same series as `quantum-computers-book-site` (Volume I) and `quantum-algorithms-book2-site` (Volume II). It deliberately uses the exact same fonts, box colors, heading styles, and reader UI as the earlier volumes, so all three feel like one consistent series.
+This is **Volume III** of the same series as Volumes I and II. It uses the exact same fonts, box colors, heading styles, and reader UI as the other volumes, so all three feel like one consistent series.
 
-## Design note: matched to the series on purpose
+## Structural differences from Volumes I & II (handled automatically)
 
-Volume III's source `.docx` uses its own color palette for pedagogical boxes (sampled directly from the document's table shading), which differs from Volumes I/II. **This site intentionally overrides those with the series' established colors and typography** rather than keeping Volume III's own, so the three books read as one series. If you'd ever prefer Volume III to use its own native palette instead, that's a small, isolated change (the color values are all in `assets/css/style.css`).
+Volume III's source document uses yet another chapter-banner convention, different again from both prior volumes:
 
-## New box types in this volume
-
-Volume III's source uses a richer set of pedagogical boxes than Volumes I/II — 9 types instead of 6, plus inline Examples. Five reuse existing series classes:
-
-- **Key Concept**, **Anecdote/Historical**, **Real World**, **Warning**, **Example** — same classes and colors as Volumes I/II
-- **Mathematics** boxes (step-by-step derivations) now use the `box-math` class, previously defined but unused in Volume II
-- Short highlighted equation call-outs use `box-equation` (previously defined but unused in Volume II)
-
-Four are genuinely new, added to `assets/css/style.css` with colors chosen to stay harmonious with the existing palette:
-
-- `box-learning-objectives` (blue-grey) — per-chapter learning objectives
-- `box-definition` (indigo) — formal Definition/Theorem statements
-- `box-tip` (amber) — practical tips
-- `box-roadmap` (brown) — short orientation/roadmap notes, and the "RECAP" wayfinding notes that lead into each chapter's practice section
-
-## Structural differences from Volumes I/II (handled automatically)
-
-- **Chapter banners are table-based**, not a heading style: each chapter opens with a table whose first cell contains a literal `UNIT n | CHAPTER n` heading, the chapter title, and a keyword subtitle — all parsed out and re-emitted as `# CHAPTER n`, `# Title`, and an italic `*Unit n · keywords*` line.
-- **Ten chapters grouped into five units.** Unit 1 has its own intro banner (lecture hours, figure/example/MCQ counts) rendered as a `box-roadmap` box at the very top of Chapter 1; Units 2–5 don't carry a separate banner in the source, so their chapters only show the "Unit n · keywords" subtitle line — this is a genuine asymmetry in the source document, not a conversion bug.
-- **Real equations, not typed Unicode.** Unlike Volumes I/II (which typed math directly as Unicode text), this book's ~230 equations are genuine Word equation objects. They're converted to the same plain-Unicode style via a LaTeX→text pass, since no MathJax/KaTeX is loaded on this site (matching the rest of the series).
-- **Figures carry real captions.** Volumes I/II's `<figcaption>` elements were left empty; this book's docx has genuine "Figure n.n: ..." captions, so `<figcaption>` is populated here.
+- **Chapter banners use a "UNIT n | CHAPTER m" marker** (Heading 1, no colon or title on the same line), with the subtitle following as a separate paragraph. Neither Volume I's colon-joined format nor Volume II's bare "CHAPTER n" format applies here — the converter detects this book's specific marker text directly.
+- **Section-heading styles are inconsistent between chapters**, the same underlying issue as Volume II: chapters 5 and 6 tag their major sections ("5.1", "6.1") as Heading 1, while every other chapter tags the equivalent sections as Heading 2. The same order-of-first-appearance normalization used for Volume II handles this automatically, plus a pattern override for recurring end-of-chapter headers (Solved Examples, MCQ Answers, Chapter Summary, References, Assignments) so they sit as peers to the numbered sections regardless of their raw style.
+- **New pedagogical box icons** not seen in Volumes I/II — 📋 Learning Objectives, 💡 Tip, ▶ Definition/Theorem, ℹ Roadmap/Protocol, 📝 Problem, among others — are mapped onto the series' existing box types (Key Concept, Math, Real World, Solved Problem respectively) rather than inventing new colors, keeping the visual language consistent across all three books.
+- **Multi-panel figures**: several figures in this book embed two images side by side under one caption (e.g. "Left: ... Right: ..."). These are laid out as a responsive row rather than stacked, matching how they read in the original.
 
 ## What's inside
 
 - `index.html` — the reader shell (sidebar TOC, topbar controls, reading pane, on-page TOC)
-- `assets/css/style.css` — dark/light theme (CSS variables, toggle persists via `localStorage`) — matched to the series, plus 4 new box classes
+- `assets/css/style.css` — dark/light theme (CSS variables, toggle persists via `localStorage`) — matched to Volumes I & II
 - `assets/js/app.js` — chapter loading & routing, on-page TOC generation, read-aloud, visitor counter, like button
 - `content/*.md` — the book itself, one Markdown file per chapter, generated from your `.docx` source
 - `content/manifest.json` — the chapter list that drives the sidebar (edit titles/order here)
 
 ## Features
 
-- **Dark / light theme** — toggle in the top bar, remembers your choice
-- **Read aloud** — Web Speech API, play/pause/stop, speed selector, auto-advances chapters
-- **Clickable navigation** — every chapter, subsection, and Prev/Next button is deep-linkable
+- **Dark / light theme** — toggle in the top bar, remembers your choice (light is default — it's the book's actual printed appearance)
+- **Read aloud** — uses the browser's built-in Web Speech API. Play/pause, stop, and a speed selector (0.8×–1.75×). **Click any paragraph or heading to set it as the starting point** — a gold left-border marks the chosen spot until you pick a different one or navigate to another chapter. The paragraph being read is highlighted and auto-scrolled, advancing to the next chapter automatically.
+- **Clickable navigation** — every chapter link, on-page TOC entry, and Prev/Next chapter button is deep-linkable
 - **Filter box** in the sidebar to quickly jump to a chapter
 - **Visitor counter** (sidebar footer) and **like button** (top bar, red heart)
+- **More in this series** — links to Volumes I and II in the sidebar (see "Cross-linking the series" below)
 - Responsive: collapses to a slide-out sidebar on mobile
 
 ## Cross-linking the series
 
-The sidebar's "More in this series" links to Lab Manual I, Volume I, and Volume II (the `SERIES_LINKS` constant near the top of the counter/like-button section in `assets/js/app.js`). If you add more volumes later, add more entries to this same array.
+The sidebar's "More in this series" section links to all five titles in the series — the other two textbook volumes plus both laboratory manuals. These now point to the real, live GitHub Pages URLs:
 
 ```js
 const SERIES_LINKS = [
+  { label: "Volume I — Quantum Computers (Textbook)", url: "https://skjaindr.github.io/Quantum-Computing.book-open-1/" },
+  { label: "Volume II — Quantum Algorithms & Complexity (Textbook)", url: "https://skjaindr.github.io/Quantum-Computing.book-open-2/" },
+  { label: "Volume III — Quantum Hardware, Error Correction & Applications", url: "https://skjaindr.github.io/Quantum-Computing.book-open-3" },
   { label: "Laboratory Manual I — Hands-on Qiskit Experiments", url: "https://skjaindr.github.io/Quantum-Computing.labmanual-open-1/" },
-  { label: "Volume I — Quantum Computers", url: "https://skjaindr.github.io/Quantum-Computing.book-open-1" },
-  { label: "Volume II — Quantum Algorithms & Complexity", url: "https://skjaindr.github.io/Quantum-Computing.book-open-2" },
+  { label: "Laboratory Manual II — Advanced Experiments - Security, Hardware Platforms and Applications", url: "https://skjaindr.github.io/Quantum-Computing.labmanual-open-2/" },
 ];
 ```
 
-**Remember to also update Volume I's and Lab Manual I's own `SERIES_LINKS`** to add this book, so cross-linking works in both directions:
+This list includes a link back to this same book (Volume III) — that's intentional per how the list was specified, not an oversight. If you'd rather this site omit a link to itself, remove that one entry from `SERIES_LINKS` in this file.
 
-```js
-{ label: "Volume III — Quantum Hardware, Error Correction & Applications", url: "https://skjaindr.github.io/Quantum-Computing.book-open-3" },
-```
+**Keep plain and protected sites cross-linked separately.** This is the plain (unprotected) version — every URL above ends in `-open-N` (or `labmanual-open-N`), i.e. the plain sites. The protected version of this book has its own `SERIES_LINKS` pointing to the corresponding `-N` (non-"open") protected URLs. Don't mix the two. If any of these repos hasn't been created/deployed yet, that particular link will simply 404 until it exists.
 
 ## Visitor counter & like button
 
-Backed by [Abacus](https://abacus.jasoncameron.dev), a free counting API needing no signup or key. Volume III uses its own counter namespace (`qc-series-vol3-skjain`, set in `assets/js/app.js` as `COUNTER_NAMESPACE`) so its visitor/like counts are tracked independently from every other book/manual in the series — none of them share a total.
+Backed by [Abacus](https://abacus.jasoncameron.dev), a free counting API needing no signup or key. Volume III uses its own counter namespace (`qc-series-vol3-skjain`, set in `assets/js/app.js` as `COUNTER_NAMESPACE`) so its counts are tracked separately from the other volumes.
 
 - **Visitor counter**: increments once per page load, shown in the sidebar footer.
-- **Like button**: click once to like — it turns solid red and the count increments, remembered via `localStorage` so it can't be clicked repeatedly.
+- **Like button**: click once to like — turns solid red, count increments, remembered via `localStorage` so it can't be clicked repeatedly. No "unlike."
 
-**Verify this actually works once deployed** — click the like button on your deployed site and refresh to confirm the count persists.
+**Verify this actually works once deployed.** Built and tested in a sandboxed environment with no outbound internet access, so the graceful-failure path was verified but the live API calls were not. Click the like button on your deployed site and refresh to confirm the count persists.
 
 ## Publishing to GitHub Pages
 
-1. Create a new GitHub repository (e.g. `Quantum-Computing.book-open-3`, to sit alongside your Volume I/II and Lab Manual repos).
+1. Create a new GitHub repository (e.g. `quantum-hardware-book-site`, alongside your Volume I and II repos).
 2. Copy everything in this folder into the repo root and push:
    ```bash
    git init
@@ -91,6 +75,8 @@ Backed by [Abacus](https://abacus.jasoncameron.dev), a free counting API needing
 
 ### Testing locally before you push
 
+Opening `index.html` directly by double-clicking it will **not** work — browsers block `fetch()` of local files. Serve the folder instead:
+
 ```bash
 python3 -m http.server 8000
 # then open http://localhost:8000
@@ -98,13 +84,18 @@ python3 -m http.server 8000
 
 ## About the text conversion — please proofread
 
-Converted from your `.docx` using the same pipeline built for Volumes I/II, adapted for this book's table-based chapter banners and real equation objects: 75 figures extracted and placed with their original captions, 9 pedagogical box types detected from the document's table structure and mapped onto the series' box vocabulary (4 new classes added), ~230 equations converted from native Word math to plain-Unicode text, and genuine data tables (comparison tables, MCQ answer keys, the Figure/Table/Symbol indexes) rendered as real HTML tables.
+Converted from your `.docx` using the series pipeline, adapted for this book's specific structure (see above). Four real conversion bugs were found and fixed during this build, all verified:
 
-A few things worth a skim:
+1. A "Table Index" skip-heading in the front matter was leaving a skip-flag stuck on, which silently deleted all of Chapter 1's real content until the next incidental heading. Fixed — Chapter 1 now has its full ~90,000 characters of content.
+2. Figures with two side-by-side image panels under one caption were only keeping the first panel. Fixed to capture all panels in a figure box.
+3. A handful of figures were nested inside a container table that also had its own direct content (a formula), and only the outer content was rendering. Fixed to render nested table content too.
+4. The cover image was tagged with a heading style in the source despite containing only an image — this exact bug also hit Volume II's dedication photo, and I'd fixed it there but the fix didn't carry over when this converter was rebuilt for Volume III's different structure. Now fixed and verified.
 
-- **Front-matter Table of Contents** was rebuilt from the document's auto-generated TOC field, filtered down to chapter + two-level-section entries (matching the granularity of Volumes I/II) — the original TOC includes every three-level subsection and isn't reproduced in full, but the sidebar and on-page TOC still expose every heading.
-- **The A–Z glossary** (back matter) is dense and formula-heavy in this book; each letter's entries are rendered inside an equation-style box rather than as plain list items, since most entries are short formula summaries rather than prose.
-- **One cover-page line reads "*First Edition*"** — the source docx literally just contains the single word "First" at that spot (likely a truncated "First Edition, 2026" in the original draft); rendered as-is rather than guessing at the missing word.
-- **Units 2–5 don't get an intro banner box** the way Unit 1 does — see the structural-differences note above.
+All 83 images in this book are accounted for — zero missing, zero orphaned, confirmed by scanning every chapter's image references against the extracted image files. Figures compressed from 13.7MB to 4.9MB with no visible quality loss.
 
-None of this is destructive — the `.md` files are plain text you can hand-edit directly, same as the rest of the series.
+A few small things worth knowing:
+
+- **Learning Objectives boxes**: in Chapter 1 only, this appears as plain bold text rather than a styled box — the source used a table for this box in every other chapter but bold text in Chapter 1. Content is complete either way, just not boxed in that one instance.
+- A small number of single-cell tables (e.g. a lone table just containing the word "Examples:") render as near-empty boxes — this is genuinely how the source document has them, not lost content.
+
+None of this is destructive — the `.md` files are plain text you can hand-edit directly.

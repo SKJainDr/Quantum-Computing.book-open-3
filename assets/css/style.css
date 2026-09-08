@@ -278,6 +278,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   max-width:100%; border-radius: var(--radius-m); border:1px solid var(--border);
   background: var(--img-panel-bg); padding: 10px;
 }
+/* Some figures embed two or more side-by-side panels (e.g. "Left: ... Right: ...")
+   as separate images sharing one caption — lay those out in a row instead of stacked. */
+.prose figure.book-figure-multi{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.prose figure.book-figure-multi img{ flex:1 1 260px; max-width:100%; margin:0; }
+.prose figure.book-figure-multi figcaption{ flex-basis:100%; }
 .prose figure.book-figure figcaption{
   margin-top:10px; font-size:13.5px; color: var(--text-dim); font-style:italic; font-family: var(--font-ui);
   text-align:center;
@@ -361,31 +366,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 [data-theme="dark"] .prose .box-equation{ background: color-mix(in srgb, #B8860B 22%, var(--bg-inset)); }
 .prose .box-equation p:first-child{ font-family: var(--font-ui); }
 
-
-/* Learning Objectives — blue-grey (new in Volume III) */
-.prose .box-learning-objectives .box-title{ background:#37474F; }
-.prose .box-learning-objectives{ background:#ECEFF1; }
-[data-theme="dark"] .prose .box-learning-objectives{ background: color-mix(in srgb, #37474F 26%, var(--bg-inset)); }
-
-/* Definition / Theorem — indigo (new in Volume III) */
-.prose .box-definition .box-title{ background:#283593; }
-.prose .box-definition{ background:#E8EAF6; }
-[data-theme="dark"] .prose .box-definition{ background: color-mix(in srgb, #283593 26%, var(--bg-inset)); }
-
-/* Tip — amber (new in Volume III) */
-.prose .box-tip .box-title{ background:#A85D00; }
-.prose .box-tip{ background:#FFF4E5; }
-[data-theme="dark"] .prose .box-tip{ background: color-mix(in srgb, #A85D00 24%, var(--bg-inset)); }
-
-/* Roadmap / Protocol — brown (new in Volume III) */
-.prose .box-roadmap .box-title{ background:#6D4C41; }
-.prose .box-roadmap{ background:#EFEBE9; }
-[data-theme="dark"] .prose .box-roadmap{ background: color-mix(in srgb, #6D4C41 26%, var(--bg-inset)); }
-
 .prose .box-generic .box-title{ background: var(--text-faint); }
 .prose .box-generic{ background: var(--bg-inset); }
 
 .reading-word{ background: color-mix(in srgb, var(--accent) 35%, transparent); border-radius:3px; }
+
+/* ---------- READ-ALOUD START POSITION ----------
+   Any paragraph/heading is clickable to set where read-aloud begins — a subtle
+   hover cue invites this, and a persistent left-border marks the chosen spot
+   until a new one is picked or the chapter changes. */
+.read-start-target{ cursor: pointer; transition: background .12s ease; border-radius: 4px; }
+.read-start-target:hover{ background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.read-start-marker{
+  position: relative;
+  padding-left: 14px !important;
+  margin-left: -14px;
+  border-left: 3px solid var(--gold);
+}
 
 /* ============ CHAPTER PAGER (clearly visible, colored) ============ */
 .chapter-pager{ display:flex; justify-content:space-between; gap:16px; margin-top:60px; padding-top:24px; border-top:1px solid var(--border-soft); }

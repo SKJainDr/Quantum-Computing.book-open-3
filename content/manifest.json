@@ -5,46 +5,46 @@
   },
   {
     "file": "01-chapter-1.md",
-    "title": "Chapter 1 — Superconducting and Trapped-Ion Qubits"
+    "title": "Chapter 1 \u2014 Superconducting and Trapped-Ion Qubits"
   },
   {
     "file": "02-chapter-2.md",
-    "title": "Chapter 2 — Photonic, Spin, Topological and Neutral Atom Platforms"
+    "title": "Chapter 2 \u2014 Photonic, Spin, Topological and Neutral Atom Platforms"
   },
   {
     "file": "03-chapter-3.md",
-    "title": "Chapter 3 — Noise Sources and Noise Characterisation"
+    "title": "Chapter 3 \u2014 Noise Sources and Noise Characterisation"
   },
   {
     "file": "04-chapter-4.md",
-    "title": "Chapter 4 — Error Mitigation Techniques"
+    "title": "Chapter 4 \u2014 Error Mitigation Techniques"
   },
   {
     "file": "05-chapter-5.md",
-    "title": "Chapter 5 — Advanced QKD Protocols and Post-Quantum Cryptography"
+    "title": "Chapter 5 \u2014 Advanced QKD Protocols and Post-Quantum Cryptography"
   },
   {
     "file": "06-chapter-6.md",
-    "title": "Chapter 6 — QRNG, Superdense Coding, and Advanced Quantum Protocols"
+    "title": "Chapter 6 \u2014 QRNG, Superdense Coding, and Advanced Quantum Protocols"
   },
   {
     "file": "07-chapter-7.md",
-    "title": "Chapter 7 — Quantum Network Architecture and Repeater Technology"
+    "title": "Chapter 7 \u2014 Quantum Network Architecture and Repeater Technology"
   },
   {
     "file": "08-chapter-8.md",
-    "title": "Chapter 8 — Entanglement Distillation, Quantum Internet, Satellite QKD, and India’s Quantum Network"
+    "title": "Chapter 8 \u2014 Entanglement Distillation, Quantum Internet, Satellite QKD, and India's Quantum Mission"
   },
   {
     "file": "09-chapter-9.md",
-    "title": "Chapter 9 — Quantum Chemistry, Finance and Materials Simulation"
+    "title": "Chapter 9 \u2014 Quantum Chemistry, Finance and Materials Simulation"
   },
   {
     "file": "10-chapter-10.md",
-    "title": "Chapter 10 — Quantum Industry and Career Landscape"
+    "title": "Chapter 10 \u2014 Quantum Industry and Career Landscape"
   },
   {
     "file": "11-index.md",
-    "title": "A–Z Index of Terms"
+    "title": "Index & Back Matter"
   }
 ]
