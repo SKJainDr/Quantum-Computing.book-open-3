@@ -133,8 +133,6 @@
     buildPageToc(tocEntries);
     buildPager(index);
     highlightActiveNav(index);
-    readStartIndex = 0;
-    attachReadStartHandlers();
 
     if (!opts.skipScroll) {
       els.main.scrollTo({ top: 0 });
@@ -210,7 +208,6 @@
   const synth = window.speechSynthesis;
   let utterQueue = [];
   let utterIndex = 0;
-  let readStartIndex = 0; // user-chosen starting chunk for this chapter (click any paragraph to set)
   let speaking = false;
   let paused = false;
   let currentMark = null;
@@ -221,30 +218,6 @@
       "h1, h2, h3, h4, p, li, blockquote, .box .box-title, .box p, figcaption"
     );
     return [...blocks].filter((b) => b.textContent.trim().length > 0);
-  }
-
-  function setReadStart(i) {
-    const chunks = getReadableChunks();
-    chunks.forEach((el) => el.classList.remove("read-start-marker"));
-    if (chunks[i]) {
-      chunks[i].classList.add("read-start-marker");
-      readStartIndex = i;
-    }
-  }
-
-  function attachReadStartHandlers() {
-    // Clicking any paragraph/heading sets it as the read-aloud starting point —
-    // lets the person resume or jump in partway through a chapter instead of
-    // always starting from the top.
-    const chunks = getReadableChunks();
-    chunks.forEach((el, i) => {
-      el.classList.add("read-start-target");
-      el.addEventListener("click", (e) => {
-        if (window.getSelection().toString().length > 0) return; // don't hijack text selection
-        if (e.target.closest("a")) return; // let links navigate normally
-        setReadStart(i);
-      });
-    });
   }
 
   function clearHighlight() {
@@ -288,7 +261,7 @@
     speakNext();
   }
 
-  function startReading() {
+  function startReadingFrom(idx) {
     if (!synth) {
       alert("Your browser does not support the Web Speech API for read-aloud.");
       return;
@@ -299,7 +272,11 @@
     els.playBtn.classList.add("speaking");
     els.iconPlay.style.display = "none";
     els.iconPause.style.display = "block";
-    speakFrom(readStartIndex);
+    speakFrom(idx);
+  }
+
+  function startReading() {
+    startReadingFrom(0);
   }
 
   function togglePause() {
@@ -330,6 +307,28 @@
   els.playBtn.addEventListener("click", togglePause);
   els.stopBtn.addEventListener("click", stopReading);
   window.addEventListener("hashchange", stopReading);
+
+  /* ---------------- READ ALOUD: START FROM ANY POINT ----------------
+     Click any paragraph, heading, list item, or box text in the reading
+     pane to begin (or jump) narration from that exact spot, instead of
+     always starting at the top of the chapter. A text-selection drag is
+     treated as "select text", not "jump here", so copying still works
+     normally on the plain site. */
+  if (synth) document.body.classList.add("tts-ready");
+
+  const READABLE_SELECTOR = "h1, h2, h3, h4, p, li, blockquote, .box .box-title, .box p, figcaption";
+  els.chapterContent.addEventListener("click", (e) => {
+    if (!synth) return;
+    if (e.target.closest("a, button, input, select, textarea")) return;
+    const sel = window.getSelection();
+    if (sel && sel.toString().trim().length > 0) return; // was selecting text, not jumping
+    const block = e.target.closest(READABLE_SELECTOR);
+    if (!block || !els.chapterContent.contains(block)) return;
+    const chunks = getReadableChunks();
+    const idx = chunks.indexOf(block);
+    if (idx === -1) return;
+    startReadingFrom(idx);
+  });
 
   /* ---------------- SERIES CROSS-LINKS ----------------
      Each site in the series links to its sibling volume(s) here. This site
